@@ -1,0 +1,40 @@
+.header{
+  width:1020px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  &__upperBox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__bottomBox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &__left{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__right{
+      display: flex;
+      justify-content: space-between;
+      &__good{
+        display: flex;
+        justify-content: space-around;
+      }
+      &__info{
+        display: flex;
+        justify-content: space-around;
+      }
+      &__todo{
+        display: flex;
+        justify-content: space-around;
+      }
+      &__mypage{
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+}
