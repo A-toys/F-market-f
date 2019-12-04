@@ -22,7 +22,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :address_building
       t.integer :address_phone_number
       t.text :icon
-      t.text :introduce
+      t.text :introduce, limit: 10000
 
       ## Recoverable
       t.string   :reset_password_token
