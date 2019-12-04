@@ -1,4 +1,4 @@
-#DB設計
+# DB設計
 
 # usersテーブル
 
@@ -22,7 +22,7 @@
 |address_building|string||
 |address_phone_number|integer||
 |icon|text||
-|introduce|text||
+|introduce|text|limit: 10000|
 
 ### Association
 - has_many :items
@@ -35,7 +35,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|text|text||
+|text|text|limit: 10000|
 |fee_burden|integer|null: false|
 |service|integer|null: false|
 |area|integer|null: false|
@@ -44,22 +44,21 @@
 |trading_status|integer|null: false|
 |seller_user_id|references|null: false, foreign_key: true|
 |category|integer|null: false|
-|brand|text||
+|brand|string||
 |image_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :coments
 - has_many :images
-- has_many :belong_to user
+- belongs_to :user
 - has_one :order
 
 
-
-
 ## imageテーブル
+
 |Column|Type|Options|
 |------|----|-------|
-|iamge_url|text|null: false|
+|image_url|string|null: false|
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -77,7 +76,6 @@
 - belongs_to :item
 - belongs_to :user
 
-buyer_user_id
 
 ## ordersテーブル
 
