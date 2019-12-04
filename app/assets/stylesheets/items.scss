@@ -37,8 +37,17 @@
   text-align: center;
   white-space: nowrap;
   overflow-x: auto;
+  display: block;
+  width: 100%;
 }
+
 .category_type ul{
   display: inline-block;
-  margin: 0px;
+  margin: 0px;;
+  display: flex;
+  text-align: center;
+}
+.category_type li{
+  display: inline-block;
+  margin: 10px 0px 0px 10px;
 }
