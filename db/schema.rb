@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_065204) do
+ActiveRecord::Schema.define(version: 2019_12_04_105446) do
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "text"
+    t.integer "condition", null: false
+    t.integer "fee_burden", null: false
+    t.integer "service", null: false
+    t.integer "area", null: false
+    t.integer "handing_time", null: false
+    t.integer "price", null: false
+    t.integer "trading_status", null: false
+    t.bigint "seller_user_id", null: false
+    t.integer "category", null: false
+    t.string "brand"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["seller_user_id"], name: "index_items_on_seller_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -41,4 +59,5 @@ ActiveRecord::Schema.define(version: 2019_12_04_065204) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "users", column: "seller_user_id"
 end
