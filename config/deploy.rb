@@ -1,7 +1,7 @@
 lock "3.11.2"
 
 set :application, "F-market-f"
-set :repo_url, "git@example.com:yuki-h22/F-market-f.git"
+set :repo_url, "git@github.com:yuki-h22/F-market-f.git"
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
