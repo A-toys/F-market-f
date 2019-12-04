@@ -1,5 +1,7 @@
-$('.slider_box').slick({
-  autoplay:true,
-  autoplaySpeed:5000,
-  dots:true,
-})
+$(function(){
+  $('.slider').slick({
+    autoplay: true,
+    speed: 800,
+    autoplaySpeed: 4000,
+  })
+  });
