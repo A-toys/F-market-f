@@ -1,3 +1,44 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.index{
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px 10px;
+} 
+.index_box{
+  position: relative;
+}
+.slider{
+  height: 390px;
+  width: 100vw;
+  // left: 50%;
+  // margin-left: -50vw;
+  // position: relative;
+  // top: 0px;
+  // overflow: hidden;
+  
+}
+.category_box{
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  padding: 40px 20px 20px;
+  top: 0px;
+  left: 50%;
+  margin-left: -50vw;
+  position: relative;
+  margin-top: 12px;
+}
+.category_box h2{
+  margin-bottom: 16px;
+  text-align: center;
+}
+.category_type{
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.category_type ul{
+  display: inline-block;
+  margin: 0px;
+}
