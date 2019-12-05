@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: F-market-f_production
-  username: F-market-f
-  password: <%= ENV['F-MARKET-F_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
