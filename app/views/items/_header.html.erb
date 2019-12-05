@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header__upperBox">
       <div class="header__upperBox__logo">
-        <img src="fmarket_logo_red.svg" width="134px" height="36px">
+        <a href="/"><img src="fmarket_logo_red.svg" width="134px" height="36px"></a>
       </div>
       <div class="header__upperBox__search">
         <form class="header__upperBox__search">
@@ -22,10 +22,16 @@
       </div>
       <div class="header__bottomBox__right">
         <ul class="header__bottomBox__right__nav">
+        <% if user_signed_in? %>
           <li class="header__bottomBox__right__nav__list good"><a href="#" class="aaa">いいね！一覧</a></li>
           <li class="header__bottomBox__right__nav__list info"><a href="#" class="aaa">お知らせ</a></li>
           <li class="header__bottomBox__right__nav__list todo"><a href="#" class="aaa">やることリスト</a></li>
-          <li class="header__bottomBox__right__nav__list"><a href="#" class="aaa">マイページ</a></li>
+          <li class="header__bottomBox__right__nav__list"><a href="/mypage" class="aaa">マイページ</a></li>
+          <% else %>
+          <li class="header__bottomBox__right__nav__list"><%= link_to "新規会員登録", new_user_registration_path, class: "nav_btn_red" %></li>
+          <li class="header__bottomBox__right__nav__list"><%= link_to "ログイン", new_user_session_path, class: "nav_btn_blue" %></li>
+          <% end %>
+          <li class="header__bottomBox__right__nav__list"><a href="/mypage" class="aaa">マイページ</a></li>
         </ul>
         </div>
       </div>
