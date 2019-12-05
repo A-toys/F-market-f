@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   def index
   end
 
-  def login_page
+  def registration_page
     render :layout => false
   end
 end
