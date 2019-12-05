@@ -9,11 +9,6 @@
   line-height: 36px;
 }
 
-a:hover{
-  color: rgb(17, 116, 174);
-  transition: 300ms;
-}
-
 .aaa{
   -webkit-box-align: center;
   align-items: center;
@@ -23,6 +18,33 @@ a:hover{
   transform: scale(1);
   transition: all 0.3s ease-out 0s;
 }
+
+.nav_btn_red{
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 8px 10px;
+  background-color: rgb(234, 53, 45);
+  border: 1px solid rgb(234, 53, 45);
+  &:hover{
+    color: #fff;
+    transition: 300ms;
+  }
+}
+.nav_btn_blue{
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 8px 10px;
+  background-color: #fff;
+  color: rgb(17, 116, 174);
+  border: 1px solid rgb(17, 116, 174);
+  &:hover{
+    color: #fff;
+    background-color: rgb(17, 116, 174);
+    transition: 300ms;
+  }
+}
+
 
 .header{
   width:1020px;
