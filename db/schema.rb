@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_124858) do
+ActiveRecord::Schema.define(version: 2019_12_05_030433) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2019_12_04_124858) do
     t.index ["seller_user_id"], name: "index_items_on_seller_user_id"
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "buyer_user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_user_id"], name: "index_orders_on_buyer_user_id"
+    t.index ["item_id"], name: "index_orders_on_item_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -84,4 +93,6 @@ ActiveRecord::Schema.define(version: 2019_12_04_124858) do
   add_foreign_key "images", "items"
   add_foreign_key "items", "images"
   add_foreign_key "items", "users", column: "seller_user_id"
+  add_foreign_key "orders", "items"
+  add_foreign_key "orders", "users", column: "buyer_user_id"
 end
