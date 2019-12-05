@@ -2,4 +2,60 @@
   .mypage__container
     = render partial: 'myside'
     .mypage__container__main
-    
+      .mypage__container__main__title
+        本人情報の登録
+      .mypage__container__main__confirm
+        .mypage__container__main__confirm__p
+          お客さまの本人情報をご登録ください。
+          %br
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .mypage__container__main__confirm__p__right
+          %a{href:"#",id:"atag"}本人確認事項のアップロードについて>
+        .mypage__container__main__confirm__group
+          .mypage__container__main__confirm__group__title
+            お名前
+          .mypage__container__main__confirm__group__name
+            原田 祐輔
+        .mypage__container__main__confirm__group
+          .mypage__container__main__confirm__group__title
+            お名前カナ
+          .mypage__container__main__confirm__group__name
+            ハラダ　ユウスケ
+        .mypage__container__main__confirm__group
+          .mypage__container__main__confirm__group__title
+            生年月日
+          .mypage__container__main__confirm__group__name
+            1997/04/06
+        .mypage__container__main__confirm__group
+          .mypage__container__main__confirm__group__title
+            郵便番号
+          %span#nini.mypage__container__main__confirm__group__span
+            任意
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+        .mypage__container__main__confirm__group
+          .mypage__container__main__confirm__group__title
+            都道府県
+          %span#nini.mypage__container__main__confirm__group__span
+            任意
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+        .mypage__container__main__confirm__group
+          .mypage__container__main__confirm__group__title
+            市区町村
+          %span#nini.mypage__container__main__confirm__group__span
+            任意
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+        .mypage__container__main__confirm__group
+          .mypage__container__main__confirm__group__title
+            番地
+          %span#nini.mypage__container__main__confirm__group__span
+            任意     
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+        .mypage__container__main__confirm__group
+          .mypage__container__main__confirm__group__title
+            建物名
+          %span#nini.mypage__container__main__confirm__group__span
+            任意 
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+        %button.mypage__container__main__confirm__btn{id:"btn"} 登録する
+        %a{href: "#",id:"about"} 本人情報の登録について＞
+     

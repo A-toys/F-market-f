@@ -1,0 +1,94 @@
+.mypage__container__main{
+  float: right;
+  background: #fff;
+  width: 700px;
+  height: 1207;
+  margin-bottom: 100px;
+  &__title{
+    font-size: 24px;
+    padding: 8px 24px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #f5f5f5;;
+  }
+  &__confirm{
+    padding: 64px;
+    width: 572px;
+    height: 1029px;
+    background-color: #fff;
+    &__p{
+      margin: 8px 0 0;
+      line-height: 1.5;
+      font-size: 14px;
+      &__right{
+        height: 40px;
+        #atag{
+          color: #0099e8;
+          text-decoration: none;
+          float: right;
+          font-size: 14px;
+          margin-top: 10px          
+        }
+      }
+    }
+    &__group{
+      margin: 40px 0 0;
+      width: 572px;
+      height: 43px;
+      &__title{
+        font-weight: 600;
+        font-size: 14px;
+        display: inline-block;
+      }
+      #nini{
+        color: red;
+        background: #ccc;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+      }
+      &__name{
+        margin: 8px 0 0;
+        line-height: 1.5;
+        font-size: 14px;
+        }
+      &__form{
+        width: 538px;
+        margin: 8px 0 0;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      }
+    &__btn{
+      margin: 75px 0 0 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+    }
+    #about{
+      color:#0099e8 ;
+      text-decoration: none;
+      margin: 8px 0 0;
+      line-height: 1.5;
+      float: right;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+  }
+}
