@@ -31,31 +31,36 @@
             郵便番号
           %span#nini.mypage__container__main__confirm__group__span
             任意
-          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "郵便番号", :type => "email", :value => ""}/
         .mypage__container__main__confirm__group
           .mypage__container__main__confirm__group__title
-            都道府県
+            郵便番号
           %span#nini.mypage__container__main__confirm__group__span
             任意
-          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+          %select{:name => "budget_d",class:"mypage__container__main__confirm__group__select"}
+            %option{:value => "0"}  --
+            %option{:value => "1"}  ¥~999
+            %option{:value => "2"} ¥1,000~¥1,999
+            %option{:value => "3"} ¥2,000~¥2,999
+            %option{:value => "4"} ¥3,000~
         .mypage__container__main__confirm__group
           .mypage__container__main__confirm__group__title
             市区町村
           %span#nini.mypage__container__main__confirm__group__span
             任意
-          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "市区町村", :type => "email", :value => ""}/
         .mypage__container__main__confirm__group
           .mypage__container__main__confirm__group__title
             番地
           %span#nini.mypage__container__main__confirm__group__span
             任意     
-          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "番地", :type => "email", :value => ""}/
         .mypage__container__main__confirm__group
           .mypage__container__main__confirm__group__title
             建物名
           %span#nini.mypage__container__main__confirm__group__span
             任意 
-          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+          %input.mypage__container__main__confirm__group__form{:name => "email", :placeholder => "建物名", :type => "email", :value => ""}/
         %button.mypage__container__main__confirm__btn{id:"btn"} 登録する
         %a{href: "#",id:"about"} 本人情報の登録について＞
      
