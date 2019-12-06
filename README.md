@@ -20,7 +20,7 @@
 
 ### Association
 - has_many :items
-- has_many :coments
+- has_many :comments
 - has_many :orders
 - has_one :card
 - has_one :address
