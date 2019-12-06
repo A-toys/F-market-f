@@ -15,12 +15,6 @@
 |birthday_month|integer|null: false|
 |birthday_date|integer|null: false|
 |phone_number|integer|null: false,unique: true|
-|address_number|integer|null: false|
-|address_prefecture|string|null: false|
-|address_name|integer|null: false|
-|address_block|string|null: false|
-|address_building|string||
-|address_phone_number|integer||
 |icon|text||
 |introduce|text|limit: 10000|
 
@@ -28,7 +22,8 @@
 - has_many :items
 - has_many :coments
 - has_many :orders
-
+- has_one :card
+- has_one :address
 
 ## itemsテーブル
 
@@ -45,7 +40,6 @@
 |seller_user_id|references|null: false, foreign_key: true|
 |category|integer|null: false|
 |brand|string||
-|image_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :coments
@@ -91,5 +85,21 @@
 
 |Column|Type|Options|
 |------|----|-------|
-
+|user_id|references|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 ### Association
+- belongs_to user
+
+## Addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|address_number|integer|null: false|
+|address_prefecture|string|null: false|
+|address_name|integer|null: false|
+|address_block|string|null: false|
+|address_building|string||
+|address_phone_number|integer||
+|user_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to user
