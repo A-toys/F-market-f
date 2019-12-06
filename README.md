@@ -46,6 +46,16 @@
 - has_many :images
 - belongs_to :user
 - has_one :order
+- has_many :categories
+
+## categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :item
 
 
 ## imageテーブル
@@ -90,6 +100,7 @@
 |card_id|string|null: false|
 ### Association
 - belongs_to user
+pay.jp 導入します
 
 ## Addressテーブル
 |Column|Type|Options|
