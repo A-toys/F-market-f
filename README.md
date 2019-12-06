@@ -94,12 +94,12 @@
 ## Addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|address_number|integer|null: false|
-|address_prefecture|string|null: false|
-|address_name|integer|null: false|
-|address_block|string|null: false|
-|address_building|string||
-|address_phone_number|integer||
+|zip_code|integer|null: false|
+|prefecture|string|null: false|
+|city|integer|null: false|
+|block|string|null: false|
+|building|string||
+|phone_number|integer||
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to user
