@@ -2,15 +2,15 @@
   .header
     .header__upperBox
       .header__upperBox__logo
-        %a{:href => "/"}
-          %img{:height => "36px", :src => "fmarket_logo_red.svg", :width => "134px"}/
+        %a{href: "/"}
+          %img{height:"36px", src: "fmarket_logo_red.svg", width: "134px"}/
       .header__upperBox__search
         %form.header__upperBox__search
-          %input.header__upperBox__search__form{:placeholder => "何かお探しですか？", :type => "text"}/
+          %input.header__upperBox__search__form{placeholder: "何かお探しですか？", type: "text"}/
     .header__bottomBox
       .header__bottomBox__left
         .header__bottomBox__left__category
-          %a{:href => "#"}
+          %a{href: "#"}
             %i.fas.fa-list-ul>
             全ての商品一覧
         .header__bottomBox__left__brand
@@ -18,15 +18,16 @@
         %ul.header__bottomBox__right__nav
           - if user_signed_in?
             %li.header__bottomBox__right__nav__list.good
-              %a.aaa{:href => "#"} いいね！一覧
+              %a.aaa{href: "#"} いいね！一覧
             %li.header__bottomBox__right__nav__list.info
-              %a.aaa{:href => "#"} お知らせ
+              %a.aaa{href: "#"} お知らせ
             %li.header__bottomBox__right__nav__list.todo
-              %a.aaa{:href => "#"} やることリスト
+              %a.aaa{href:"#"} やることリスト
             %li.header__bottomBox__right__nav__list
-              %a.aaa{:href => "/mypage"} マイページ
+              %a.aaa{href:"/mypage"} マイページ
           - else
             %li.header__bottomBox__right__nav__list= link_to "新規会員登録", new_user_registration_path, class: "nav_btn_red"
             %li.header__bottomBox__right__nav__list= link_to "ログイン", new_user_session_path, class: "nav_btn_blue"
           %li.header__bottomBox__right__nav__list
-            %a.aaa{:href => "/mypage"} マイページ
+            %a.aaa{href: "/mypage"} マイページ
+
