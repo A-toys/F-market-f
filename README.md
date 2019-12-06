@@ -42,7 +42,7 @@
 |brand|string||
 
 ### Association
-- has_many :coments
+- has_many :comments
 - has_many :images
 - belongs_to :user
 - has_one :order
