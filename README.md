@@ -19,11 +19,11 @@
 |introduce|text|limit: 10000|
 
 ### Association
-- has_many :items
-- has_many :comments
-- has_many :orders
-- has_one :card
-- has_one :address
+- has_many :items dependent: :destroy
+- has_many :comments dependent: :destroy
+- has_many :orders dependent: :destroy
+- has_one :card dependent: :destroy
+- has_one :address dependent: :destroy
 
 ## itemsテーブル
 
@@ -42,8 +42,8 @@
 |brand|string||
 
 ### Association
-- has_many :comments
-- has_many :images
+- has_many :comments dependent: :destroy
+- has_many :images dependent: :destroy
 - belongs_to :user
 - has_one :order
 - has_many :categories
