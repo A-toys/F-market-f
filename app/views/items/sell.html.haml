@@ -1,8 +1,8 @@
 %body
   .sell
     .sell__header
-      %a{href: "/"}
-        %img{height:"49px", src: "fmarket_logo_red.svg", width: "185px",class:"sell__header__logo"}/
+    = link_to '', "#"
+      = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
     .sell__main
       .sell__main__box
         .sell__main__box__title
@@ -116,6 +116,6 @@
           = link_to "プライバシーポリシー","#",class:"sell__main__footer__box__atag"
           = link_to "メルカリ利用規約","#",class:"sell__main__footer__box__atag"
           = link_to "特定商取引に関する表記","#",class:"sell__main__footer__box__atag"
-        %a{href: "/",id:"atag"}
-          %img{height:"49px", src: "fmarket_logo_red.svg", width: "185px",class:"sell__footer__box__logo"}/
+        = link_to '', "/", id:"atag"
+        = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
         %p{id:"p"} ©Meruari,Inc
