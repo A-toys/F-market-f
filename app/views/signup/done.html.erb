@@ -1,0 +1,49 @@
+<div class="session_wrapper">
+    <div class="signup__header">
+    <h1 class="signup__header__logo">
+      <a href="/"><img src="/fmarket_logo_red.svg" width="185px" height="49px"></a>
+    </h1>
+    <nav id="nav" class="progress-bar signup__header__bar">
+      <ol>
+        <li class="">会員情報
+        <div class="progress-status__first active let_active"></div>
+        </li>
+        <li class="">電話番号認証
+        <div class="progress-status active let_active"></div>
+        </li>
+        <li class="">お届け先住所入力
+        <div class="progress-status active let_active"></div>
+        </li>
+        <li class="">支払い方法
+        <div class="progress-status active let_active"></div>
+        </li>
+        <li class="active">完了
+        <div class="progress-status__last active"></div>
+        </li>
+      </ol>
+    </nav>
+  </div>
+    <div class="session_wrapper">
+      <div class="single_container">
+        <div class="session__main">
+          <div class="session__main__container">
+            <h2 class="session__main__container__title">会員登録完了</h2>
+            <div class="session__main__container__box">
+
+              <div class="session__main__container__formGroup">
+                <p class="formGroup__text__center">ありがとうございます。</p>
+                <p class="formGroup__text__center">会員登録が完了しました。</p>
+              </div>
+
+              <div class="session__main__container__formGroup">
+              <%= link_to root_path, class: "btn_default btn_mail" do %>
+                メルカリをはじめる
+              <% end %>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

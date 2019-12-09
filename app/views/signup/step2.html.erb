@@ -1,0 +1,59 @@
+<div class="session_wrapper">
+    <div class="signup__header">
+    <h1 class="signup__header__logo">
+      <a href="/"><img src="/fmarket_logo_red.svg" width="185px" height="49px"></a>
+    </h1>
+    <nav id="nav" class="progress-bar signup__header__bar">
+      <ol>
+        <li class="">会員情報
+        <div class="progress-status__first active let_active"></div>
+        </li>
+        <li class="active">電話番号認証
+        <div class="progress-status active"></div>
+        </li>
+        <li class="">お届け先住所入力
+        <div class="progress-status"></div>
+        </li>
+        <li class="">支払い方法
+        <div class="progress-status"></div>
+        </li>
+        <li class="">完了
+        <div class="progress-status__last"></div>
+        </li>
+      </ol>
+    </nav>
+  </div>
+    <div class="session_wrapper">
+      <div class="single_container">
+        <div class="session__main">
+          <div class="session__main__container">
+            <h2 class="session__main__container__title">電話番号の確認</h2>
+            <div class="session__main__container__box">
+
+              <div class="session__main__container__formGroup">
+                <label for="nickname">携帯電話の番号</label>
+                <input type="text" class="input__default" placeholder="携帯電話の番号を入力">
+                <p class="formGroup__text">本人確認のため、携帯電話のSMS(ショートメッセージ)を利用して認証を行います。</p>
+              </div>
+
+              <div class="session__main__container__formGroup">
+              <%= link_to step3_signup_index_path, class: "btn_default btn_mail" do %>
+                SMSを送信する
+              <% end %>
+                <p class="formGroup__text">※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。</p>
+              </div>
+
+              <div class="session__main__container__formGroup">
+              <div class="session__main__container__formGroup__link">
+              <%= link_to root_path do %>
+              <p>電話番号の確認が必要な理由</p><i class="fas fa-chevron-right"></i>
+              <% end %>
+              </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
