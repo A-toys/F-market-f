@@ -1,0 +1,72 @@
+.session__main__container__regist{
+  padding: 40px 64px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border-bottom: 1px solid #f5f5f5;
+  p{
+    font-size: 14px;
+  }
+}
+
+
+
+.btn_regist{
+  color: #fff;
+  width: 341px;
+  height: 48px;
+  font-size: 14px;
+  position: relative;
+  border: 1px solid #0099e8;
+  background-color: #0099e8;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 8px;
+  &:hover{
+    opacity: 0.7;
+    transition: 300ms;
+  }
+}
+
+.login__form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .form_text{
+    width: 341px;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    &:last-child{
+      margin-top: 24px;
+    }
+  }
+}
+
+.session__main__container__btn{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: left;
+  width: 343px;
+  .btn_login{
+    color: #fff;
+    width: 341px;
+    height: 48px;
+    font-size: 14px;
+    position: relative;
+    border: 1px solid #ea352d;
+    background-color: #ea352d;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 8px;
+  }
+  .forget_password{
+    font-size: 14px;
+    color: #0099e8;
+    margin: 40px auto 0 0;
+  }
+}
