@@ -1,95 +1,20 @@
-# DB設計
+application up and running.
+Things you may want to cover:
 
-# usersテーブル
+* Ruby version
 
-|Column|Type|Options|
-|------|----|-------|
-|nickname|string|null: false,unique: true|
-|email|string|null: false,unique: true|
-|password|string|null: false|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|first_name_kana|string|null: false|
-|last_name_kana|string|null: false|
-|birthday_year|integer|null: false|
-|birthday_month|integer|null: false|
-|birthday_date|integer|null: false|
-|phone_number|integer|null: false,unique: true|
-|address_number|integer|null: false|
-|address_prefecture|string|null: false|
-|address_name|integer|null: false|
-|address_block|string|null: false|
-|address_building|string||
-|address_phone_number|integer||
-|icon|text||
-|introduce|text|limit: 10000|
+* System dependencies
 
-### Association
-- has_many :items
-- has_many :coments
-- has_many :orders
+* Configuration
 
+* Database creation
 
-## itemsテーブル
+* Database initialization
 
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|text|text|limit: 10000|
-|fee_burden|integer|null: false|
-|service|integer|null: false|
-|area|integer|null: false|
-|handing_time|integer|null: false|
-|price|integer|null: false|
-|trading_status|integer|null: false|
-|seller_user_id|references|null: false, foreign_key: true|
-|category|integer|null: false|
-|brand|string||
-|image_id|references|null: false, foreign_key: true|
+* How to run the test suite
 
-### Association
-- has_many :coments
-- has_many :images
-- belongs_to :user
-- has_one :order
+* Services (job queues, cache servers, search engines, etc.)
 
+* Deployment instructions
 
-## imageテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|image_url|string|null: false|
-|item_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-
-
-## commentテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :item
-- belongs_to :user
-
-
-## ordersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|buyer_user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
-
-## Cardテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-
-### Association
+* ...
