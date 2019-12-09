@@ -1,4 +1,12 @@
 .mypage
   .mypage__container
-    = render partial: 'myside'
+    .mypage__container__side
+      = render partial: 'myside'
     .mypage__container__main
+      .mypage__container__main__top
+        .mypage__container__main__top__header
+        .mypage__container__main__top__body
+          = render partial: 'news_todo'
+      .mypage__container__main__under
+        .mypage__container__main__under__header
+        .mypage__container__main__under__body
