@@ -1,0 +1,84 @@
+.session_wrapper
+  .signup__header
+    %h1.signup__header__logo
+      %a{href: "/"}
+        %img{height: "49px", src: "/fmarket_logo_red.svg", width: "185px"}/
+    %nav#nav.progress-bar.signup__header__bar
+      %ol
+        %li
+          会員情報
+          .progress-status__first.active.let_active
+        %li
+          電話番号認証
+          .progress-status.active.let_active
+        %li
+          お届け先住所入力
+          .progress-status.active.let_active
+        %li.active
+          支払い方法
+          .progress-status.active
+        %li
+          完了
+          .progress-status__last
+  .session_wrapper
+    .single_container
+      .session__main
+        .session__main__container
+          %h2.session__main__container__title 支払い方法
+          .session__main__container__box
+            .session__main__container__formGroup
+              %label{for: "nickname"}
+                カード番号
+                %span.form__require 必須
+              %input.input__default{placeholder: "半角数字のみ", type: "text"}/
+              .session__main__container__formGroup__sub
+                %i.fab.fa-cc-visa
+                %i.fab.fa-cc-mastercard
+                %i.fab.fa-cc-jcb
+                %i.fab.fa-cc-discover
+                %i.fab.fa-cc-amex
+                / ↑画像使うと容量圧迫するのでアイコンで仮置き
+            .session__main__container__formGroup
+              %label{for: "nickname"}
+                有効期限
+                %span.form__require 必須
+              .session__main__container__formGroup__sub
+                %select.select__wap{name: "month"}
+                  %option{value: ""} --
+                  %option{value: "01"} 01
+                  %option{value: "02"} 02
+                  %option{value: "03"} 03
+                  %option{value: "04"} 04
+                  %option{value: "05"} 05
+                  %option{value: "06"} 06
+                  %option{value: "07"} 07
+                  %option{value: "08"} 08
+                  %option{value: "09"} 09
+                  %option{value: "10"} 10
+                  %option{value: "11"} 11
+                  %option{value: "12"} 12
+                %i.fas.fa-chevron-down.select_arrow
+                %p 月
+                %select.select__wap{:name: "year"}
+                  %option{value: ""} --
+                  %option{value: "19"} 19
+                  %option{value: "20"} 20
+                  %option{value: "21"} 21
+                  %option{value: "22"} 22
+                  %option{value: "23"} 23
+                  %option{value: "24"} 24
+                  %option{value: "25"} 25
+                %i.fas.fa-chevron-down.select_arrow
+                %p 年
+              .session__main__container__formGroup
+                %label{for: "nickname"}
+                  セキュリティーコード
+                  %span.form__require 必須
+                %input.input__default{placeholder: "カード背面4桁もしくは3桁の番号", type: "text"}/
+                .session__main__container__formGroup__link
+                  = link_to root_path do
+                    %i.fas.fa-question-circle
+                    %p セキュリティーコードとは
+              .session__main__container__formGroup
+                = link_to done_signup_index_path, class: "btn_default btn_mail" do
+                  次へ進む
