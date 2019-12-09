@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/mypage', to: 'items#mypage'
   get '/registration_page', to: 'items#registration_page'
   get '/login_page', to: 'items#login_page'
+
 end

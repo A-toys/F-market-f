@@ -15,20 +15,15 @@
 |birthday_month|integer|null: false|
 |birthday_date|integer|null: false|
 |phone_number|integer|null: false,unique: true|
-|address_number|integer|null: false|
-|address_prefecture|string|null: false|
-|address_name|integer|null: false|
-|address_block|string|null: false|
-|address_building|string||
-|address_phone_number|integer||
 |icon|text||
 |introduce|text|limit: 10000|
 
 ### Association
-- has_many :items
-- has_many :coments
-- has_many :orders
-
+- has_many :items dependent: :destroy
+- has_many :comments dependent: :destroy
+- has_many :orders dependent: :destroy
+- has_one :card dependent: :destroy
+- has_one :address dependent: :destroy
 
 ## itemsテーブル
 
@@ -43,15 +38,24 @@
 |price|integer|null: false|
 |trading_status|integer|null: false|
 |seller_user_id|references|null: false, foreign_key: true|
-|category|integer|null: false|
+|category|references|null: false, foreign_key: true|
 |brand|string||
-|image_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :coments
-- has_many :images
+- has_many :comments dependent: :destroy
+- has_many :images dependent: :destroy
 - belongs_to :user
 - has_one :order
+- belongs_to :category
+
+## categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- has_many :items
 
 
 ## imageテーブル
@@ -88,8 +92,23 @@
 - belongs_to :item
 
 ## Cardテーブル
-
 |Column|Type|Options|
 |------|----|-------|
-
+|user_id|references|null: false, foreign_key: true|
+|customer_id|string|null: false|
 ### Association
+- belongs_to user
+pay.jp 導入します
+
+## Addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|zip_code|integer|null: false|
+|prefecture|string|null: false|
+|city|integer|null: false|
+|block|string|null: false|
+|building|string||
+|phone_number|integer||
+|user_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to user

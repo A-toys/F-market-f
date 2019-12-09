@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   end
 
   def registration_page
-    render :layout => false
+    render layout: :false
   end
 
   def login_page
