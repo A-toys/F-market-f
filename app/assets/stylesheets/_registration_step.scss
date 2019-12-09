@@ -1,0 +1,147 @@
+.session__main__container__formGroup{
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  width: 100%;
+  &:first-child{
+    margin: 0%;
+  }
+  h3{
+    font-weight: bold;
+  }
+  label{
+    font-size: 14px;
+    font-weight: bold;
+    .form__require{
+      background-color: #ea352d;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+      font-weight: normal;
+    }
+    .form__any{
+      background-color: #888;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+      font-weight: normal;
+    }
+  }
+  .form__info__text{
+    font-weight: normal;
+    color: #888;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .checkbox__default{
+    margin: 8px 0 0 0;
+    font-weight: normal;
+    label{
+      font-weight: normal;
+    }
+  }
+  .input__default{
+    height: 28px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .formGroup__text{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 8px;
+    &__center{
+      font-size: 14px;
+      text-align: center;
+      a{
+        color: #0099e8;
+        &:hover{
+          border-bottom: 1px solid #0099e8;
+          opacity: 0.7;
+        }
+      }
+    }
+    &__right{
+      font-size: 14px;
+      text-align: right;
+      display: flex;
+      justify-content: right;
+      a{
+        position: relative;
+        left: 80%;
+      }
+    }
+  }
+  &__sub{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 8px;
+    .fab{
+      font-size: 30px;
+      margin-right: 10px;
+    }
+    .half {
+      width: 38%;
+      margin-right: 10px;
+    }
+
+    .select__wap{
+      height: 48px;
+      width: 100%;
+      padding: 0 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      outline: none;
+      background: transparent;
+      background-image: none;
+      box-shadow: none;
+      -webkit-appearance: none;
+      appearance: none;
+      line-height: 1.5;
+      z-index: 3;
+    }
+    p{
+      font-size: 14px;
+      margin: 0 auto 0 0;
+      position: relative;
+      right: 12px;
+    }
+    .select_arrow{
+      position: relative;
+      font-size: 16px;
+      right: 24px;
+      color: #888;
+      cursor: pointer;
+      z-index: 1;
+    }
+  }
+  &__link{
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    a{
+      color: #0099e8;
+      display: flex;
+      i{
+        position: relative;
+        top: 3px;
+      }
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}

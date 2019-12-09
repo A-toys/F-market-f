@@ -5,4 +5,9 @@ class ItemsController < ApplicationController
   def registration_page
     render :layout => false
   end
+
+  def login_page
+    render :layout => false
+  end
+  
 end
