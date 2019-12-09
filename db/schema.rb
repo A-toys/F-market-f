@@ -10,46 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_062019) do
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "zip_code", null: false
-    t.string "prefecture", null: false
-    t.integer "city", null: false
-    t.string "block", null: false
-    t.string "building"
-    t.integer "phone_number"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_categories_on_item_id"
-  end
-
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "text", null: false
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_comments_on_item_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image_url", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_images_on_item_id"
-  end
+ActiveRecord::Schema.define(version: 2019_12_04_105446) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -62,26 +23,16 @@ ActiveRecord::Schema.define(version: 2019_12_09_062019) do
     t.integer "price", null: false
     t.integer "trading_status", null: false
     t.bigint "seller_user_id", null: false
+    t.integer "category", null: false
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
-    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["seller_user_id"], name: "index_items_on_seller_user_id"
-  end
-
-  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "buyer_user_id", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["buyer_user_id"], name: "index_orders_on_buyer_user_id"
-    t.index ["item_id"], name: "index_orders_on_item_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.string "email", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "last_name", null: false
     t.string "first_name", null: false
@@ -91,6 +42,12 @@ ActiveRecord::Schema.define(version: 2019_12_09_062019) do
     t.integer "birthday_month", null: false
     t.integer "birthday_day", null: false
     t.integer "phone_number", null: false
+    t.integer "address_number", null: false
+    t.integer "address_prefecture", null: false
+    t.string "address_name", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.integer "address_phone_number"
     t.text "icon"
     t.text "introduce"
     t.string "reset_password_token"
@@ -102,12 +59,5 @@ ActiveRecord::Schema.define(version: 2019_12_09_062019) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "users"
-  add_foreign_key "categories", "items"
-  add_foreign_key "comments", "items"
-  add_foreign_key "comments", "users"
-  add_foreign_key "images", "items"
   add_foreign_key "items", "users", column: "seller_user_id"
-  add_foreign_key "orders", "items"
-  add_foreign_key "orders", "users", column: "buyer_user_id"
 end
