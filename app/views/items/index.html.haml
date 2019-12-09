@@ -20,51 +20,13 @@
         = link_to 'もっと見る', "#"
       .items
         %ul
-          %li.item
-            = link_to '', "#"
-            %figure
-              .picture
-                %span#price ￥1,700
-                .pic
-              %figcaption.exp
-                %span Mac book pro　第６世代　i-56200u 8g/ssd
-          %li.item
-            = link_to '', "#"
-            %figure
-              .picture
-                %span#price ￥1,700
-                .pic
-              %figcaption.exp
-                %span Mac book pro　第６世代　i-56200u 8g/ssd
-          %li.item
-            = link_to '', "#"
-            %figure
-              .picture
-                %span#price ￥1,700
-                .pic
-              %figcaption.exp
-                %span Mac book pro　第６世代　i-56200u 8g/ssd
-          %li.item
-            = link_to '', "#"
-            %figure
-              .picture
-                %span#price ￥1,700
-                .pic
-              %figcaption.exp
-                %span Mac book pro　第６世代　i-56200u 8g/ssd
-          %li.item
-            = link_to '', "#"
-            %figure
-              .picture
-                %span#price ￥1,700
-                .pic
-              %figcaption.exp
-                %span Mac book pro　第６世代　i-56200u 8g/ssd
-          %li.item
-            = link_to '', "#"
-            %figure
-              .picture
-                %span#price ￥1,700
-                .pic
-              %figcaption.exp
-                %span Mac book pro　第６世代　i-56200u 8g/ssd
+          - @items.each do|item|
+            %li.item
+              = link_to '', "#"
+              %figure
+                -item.images.each do|image|
+                  %img{alt: "商品の写真", height: "80", src:image.image_url, width: "100",class:"picture"}
+                  %span#price="¥#{item.price}"
+                  .pic
+                %figcaption.exp
+                  %span=item.name
