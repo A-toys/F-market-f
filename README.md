@@ -38,7 +38,7 @@
 |price|integer|null: false|
 |trading_status|integer|null: false|
 |seller_user_id|references|null: false, foreign_key: true|
-|category|integer|null: false|
+|category|references|null: false, foreign_key: true|
 |brand|string||
 
 ### Association
@@ -46,7 +46,7 @@
 - has_many :images dependent: :destroy
 - belongs_to :user
 - has_one :order
-- has_many :categories
+- belongs_to :category
 
 ## categoriesテーブル
 
@@ -55,7 +55,7 @@
 |name|string|null: false|
 |item_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :item
+- has_many :items
 
 
 ## imageテーブル
@@ -92,12 +92,10 @@
 - belongs_to :item
 
 ## Cardテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |customer_id|string|null: false|
-|card_id|string|null: false|
 ### Association
 - belongs_to user
 pay.jp 導入します
