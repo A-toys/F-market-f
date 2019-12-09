@@ -25,7 +25,7 @@
               = link_to '', "#"
               %figure
                 -item.images.each do|image|
-                  %img{alt: "商品の写真", height: "80", src:image.image_url, width: "100",class:"picture"}
+                  =image_tag "/#{image.image_url}", alt: "商品の写真", class:"picture"
                   %span#price="¥#{item.price}"
                   .pic
                 %figcaption.exp
