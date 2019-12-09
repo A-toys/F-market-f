@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
   get '/mypage', to: 'items#mypage'
-  get '/registration_page', to: 'items#registration_page'
-  get '/login_page', to: 'items#login_page'
+  get '/registration', to: 'items#registration'
+  get '/login', to: 'items#login'
 
 end
