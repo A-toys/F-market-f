@@ -2,10 +2,10 @@
   .mypage__container
     .mypage__container__side
       = render partial: 'myside'
-    .mypage__container__main
-      .mypage__container__main__top
-        .mypage__container__main__top__header
-        .mypage__container__main__top__body
+    .mypage__container__list
+      .mypage__container__list__top
+        .mypage__container__list__top__header
+        .mypage__container__list__top__body
           %ul.mypage_tab
             %li.select お知らせ
             %li やることリスト
@@ -14,15 +14,14 @@
             .list__btn
             %li.hide= render 'todo'
 
-      .mypage__container__main__under
-        .mypage__container__main__under__header
-        購入した商品
-        .mypage__container__main__under__body
+      .mypage__container__list__under
+        .mypage__container__list__under__header
+          購入した商品
+        .mypage__container__list__under__body
           %ul.mypage_tab
             %li.select 取引中
             %li 過去の取引
           %ul.content
-            %li=render 'news'
-            .list__btn
-            %li.hide= render 'todo'
+            %li=render 'trading'
+            %li.hide= render 'transaction'
 
