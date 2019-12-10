@@ -6,7 +6,14 @@
       .mypage__container__main__top
         .mypage__container__main__top__header
         .mypage__container__main__top__body
-          = render partial: 'news_todo'
+          %ul.tab
+            %li.select お知らせ
+            %li やることリスト
+          %ul.content
+            %li=render 'news'
+            .list__btn
+            %li.hide= render 'todo'
+
       .mypage__container__main__under
         .mypage__container__main__under__header
         .mypage__container__main__under__body
