@@ -14,8 +14,9 @@
             %li
               =render 'news'
               .list__btn
-                .list__btn__text
-                  一覧を見る
+                = link_to "#" do
+                  .list__btn__text
+                    一覧を見る
             %li.hide
               = render 'todo'
 
