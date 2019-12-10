@@ -43,6 +43,39 @@
   }
 }
 
+.mypage__list{
+  position: relative;
+  padding: 16px;
+  display: flex;
+  border-bottom: solid #eee 1px;
+  &__icon{
+    box-sizing: border-box;
+    padding: 6px;
+    height: 48px;
+    width: 48px;
+    background-color: #eee;
+  }
+  &__text{
+    margin: 0 40px 0 20px;
+    width: 100%;
+    &__title{
+      color: #333;
+    }
+    &__time{
+    }
+  }
+  &__mark{
+    position: absolute;
+    top: 40%;
+    right: 16px;
+    height: 14px;
+    width: 8.59px;
+  }
+}
+
+.hide{
+  display: none;
+}
 .mypage_tab{
   height: 74px;
   background-color: #eee;
@@ -59,14 +92,12 @@
     box-sizing: border-box;
     background-color: #fff;
     border-top: solid 1.5px rgb(238, 41, 41);
-
   }
 }
 
 .list__btn{
   padding: 16px 16px;
   background-color: #fff;
-  border-top: solid #eee 1px;
   &__text{
     box-sizing: border-box;
     height: 56px;
