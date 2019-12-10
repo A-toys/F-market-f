@@ -7,9 +7,13 @@
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
-    &__main{
+    background-color: none;
+    &__list{
+      float: right;
+      width: 700px;
       height: 100%;
       &__top{
+        background-color: #fff;
         &__header{
           padding: 20px;
           height: 160px;
@@ -21,7 +25,14 @@
         }
       }
       &__under{
+        margin-top: 40px;
+        background-color: #fff;
         &__header{
+          padding: 0 16px;
+          line-height: 70px;
+          height: 72px;
+          font-weight: bold;
+          color: #333;
           &__body{
 
           }
@@ -31,13 +42,22 @@
   }
 }
 
+.mypage_tab{
+  height: 74px;
+  background-color: #eee;
+}
 .mypage_tab li{
+  font-weight: bold;
   width: 50%;
   height: 74px;
   float:left;
   text-align: center;
-  line-height: 74px;
+  line-height: 72px;
+  color: #333;
   &.select{
-    background-color: red;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-top: solid 1.5px rgb(238, 41, 41);
+
   }
 }
