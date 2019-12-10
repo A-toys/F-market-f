@@ -17,7 +17,8 @@
         &__header{
           padding: 20px;
           height: 160px;
-          background-image: url("../images/mypage_bg.jpeg");
+          background-image: url("mypage_bg.jpeg");
+          background-size: contain;
         }
         &__body{
           height: 100%;
@@ -59,5 +60,20 @@
     background-color: #fff;
     border-top: solid 1.5px rgb(238, 41, 41);
 
+  }
+}
+
+.list__btn{
+  padding: 16px 16px;
+  background-color: #fff;
+  border-top: solid #eee 1px;
+  &__text{
+    box-sizing: border-box;
+    height: 56px;
+    text-align: center;
+    line-height: 56px;
+    background-color: #eee;
+    color: #333;
+    font-size: 14px;
   }
 }
