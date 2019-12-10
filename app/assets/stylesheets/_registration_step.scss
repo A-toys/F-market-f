@@ -118,10 +118,26 @@
       position: relative;
       right: 12px;
     }
-    .select_arrow{
+    .select_arrow1{
       position: relative;
       font-size: 16px;
-      right: 24px;
+      right: 220px;
+      color: #888;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .select_arrow2{
+      position: relative;
+      font-size: 16px;
+      right: 150px;
+      color: #888;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .select_arrow3{
+      position: relative;
+      font-size: 16px;
+      right: 85px;
       color: #888;
       cursor: pointer;
       z-index: 1;
@@ -144,4 +160,21 @@
       }
     }
   }
+}
+
+.day,.month,.year{
+  height: 48px;
+  width: 100%;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 1.5;
+  z-index: 3;
 }

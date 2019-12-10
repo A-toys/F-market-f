@@ -9,10 +9,12 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_one :card, dependent: :destroy
   has_one :address, dependent: :destroy
+  accepts_nested_attributes_for :address
 
   protected
   def self.find_for_google(auth)
    user = User.find_by(email: auth.info.email)
+   
 
     unless user
       user = User.create(
