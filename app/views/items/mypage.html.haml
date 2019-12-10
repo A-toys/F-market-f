@@ -6,7 +6,7 @@
       .mypage__container__list__top
         .mypage__container__list__top__header
           .mypage__container__list__top__header__icon
-            = render 
+            = render partial: 'items/mypage/icon'
 
         .mypage__container__list__top__body
           %ul.mypage_tab.top_tab
@@ -14,13 +14,13 @@
             %li やることリスト
           %ul.top_content
             %li
-              =render 'items/mypage/news'
+              =render partial: 'items/mypage/news'
               .list__btn
                 = link_to "#" do
                   .list__btn__text
                     一覧を見る
             %li.hide
-              = render 'items/mypage/todo'
+              = render partial: 'items/mypage/todo'
 
       .mypage__container__list__under
         .mypage__container__list__under__header
@@ -31,7 +31,7 @@
             %li 過去の取引
           %ul.under_content
             %li
-              =render 'items/mypage/trading'
+              =render partial: 'items/mypage/trading'
             %li.hide
-              = render 'items/mypage/transaction'
+              = render partial: 'items/mypage/transaction'
 
