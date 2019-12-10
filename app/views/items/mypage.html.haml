@@ -5,6 +5,7 @@
     .mypage__container__list
       .mypage__container__list__top
         .mypage__container__list__top__header
+          .mypage__container__list__top__header
         .mypage__container__list__top__body
           %ul.mypage_tab
             %li.select お知らせ
@@ -12,6 +13,8 @@
           %ul.content
             %li=render 'news'
             .list__btn
+              .list__btn__text
+                一覧を見る
             %li.hide= render 'todo'
 
       .mypage__container__list__under
