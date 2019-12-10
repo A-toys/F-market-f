@@ -79,6 +79,8 @@ gem 'pry-rails'
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 group :production do
   gem 'unicorn', '5.4.1'
