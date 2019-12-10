@@ -7,5 +7,25 @@
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
+    &__main{
+      &__top{
+        &__header{
+          padding: 20px;
+          height: 160px;
+          background-image: url("../public/mypage_bg.jpeg");
+        }
+        &__body{
+          height: 100%;
+
+        }
+      }
+      &__under{
+        &__header{
+          &__body{
+
+          }
+        }
+      }
+    }
   }
 }
