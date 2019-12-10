@@ -1,12 +1,13 @@
-.mypage__list
-  .mypage__list__icon
-    = image_tag "/logo_red.svg", size: "36x36"
+= link_to "#" do
+  .mypage__list
+    .mypage__list__icon
+      = image_tag "/logo_red.svg", size: "36x36"
 
-  .mypage__list__text
-    .mypage__list__text__title
-      title
-    .mypage__list__text__time
-      %i.far.fa-clock
-      time
-  .mypage__list__mark
-    %i.fas.fa-chevron-right
+    .mypage__list__text
+      .mypage__list__text__title
+        事務局から個別メッセージ「ログイン通知」
+      .mypage__list__text__time
+        %i.far.fa-clock
+        ２時間前
+    .mypage__list__mark
+      %i.fas.fa-chevron-right
