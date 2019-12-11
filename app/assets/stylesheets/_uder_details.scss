@@ -1,0 +1,59 @@
+.user__details{
+  margin: 40px auto;
+  width: 700px;
+  &__top{
+    background-size: cover;
+    background-image: image-url("mypage_bg.jpeg");
+    padding-top: 50px;
+    text-align: center;
+    &__icon{
+      width: 180px;
+      margin: 0px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: #eee;
+    }
+    &__name{
+      margin: 8px 0 16px;
+      width: 100%;
+      font-size: 18px;
+      font-weight: 400;
+      color: #333;
+    }
+    &__number{
+      width: 100%;
+      padding-bottom: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+  &__center{
+    height: 50px;
+    padding-top: 14px;
+    width: 360px;
+    &__head{
+
+    }
+    &__comment{
+
+    }
+  }
+  &__bottom{
+    &__links{
+      &__f{
+      }
+      &__t{
+      }
+      &__l{
+
+      }
+    }
+  }
+}
+
+#my_icon2{
+  border-radius: 50%;
+  padding: 15px 0px;
+}
