@@ -37,6 +37,12 @@ Devise.setup do |config|
                   name: :google,
                   scope: %w(email)
 
+  config.omniauth :omniauth-facebook,
+                  ENV['FACEBOOK_APP_ID'],
+                  ENV['FACEBOOK_APP_SECRET'],
+                  name: :facebook,
+                  scope: %w(email)
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
