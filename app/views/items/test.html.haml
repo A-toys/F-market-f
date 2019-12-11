@@ -1,0 +1,10 @@
+.field.image
+  = form_with(model: @blog, local: true) do |form|
+    = form.label 'サムネイル（スクリーンショットなど）'
+    #img_field{:onclick => "$('#file').click()"}
+      - if @blog.image.url.present?
+        = image_tag(@blog.image.url)
+      - else
+        %i.fas.fa-image
+        %i.fas.fa-file-upload.add
+    = form.file_field :image, class: "image", style: "display:none;", id: "file"
