@@ -38,8 +38,11 @@ Devise.setup do |config|
                   scope: %w(email)
 
   config.omniauth :facebook,
-                  facebook_client_id,
-                  facebook_client_secret,
+                  Rails.application.secrets.facebook_client_id,
+                  Rails.application.secrets.facebook_client_secret,
+                  name: :facebook,
+                  scope: %w(email)
+
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
