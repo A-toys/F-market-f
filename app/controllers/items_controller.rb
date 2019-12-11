@@ -4,4 +4,8 @@ class ItemsController < ApplicationController
   end
   def card
   end
+
+  def show
+    render layout: 'items_show'
+  end
 end
