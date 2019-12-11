@@ -1,10 +1,20 @@
 .user__details
   .user__details__top
-    .user__details__top__box
-      .user__details__top__box__icon
-      .user__details__top__box__name
-      .user__details__top__box__number
+    = link_to root_path do
+      .user__details__top__icon
+        = image_tag "/myicon.png", size: "150x150", id: "my_icon2"
+      .user__details__top__name
+        nikoniko
+    .user__details__top__number
+      評価:0 出品数:0
   .user__details__center
-    .user__details__center__
-
-  .user__details__center
+    .user__details__center__head
+      .user__details__center__head__
+      .user__details__center__head__
+      .user__details__center__head__
+    .user__details__center__comment
+  .user__details__bottom
+    .user__details__bottom__links
+      .user__details__bottom__links__f
+      .user__details__bottom__links__t
+      .user__details__bottom__links__l
