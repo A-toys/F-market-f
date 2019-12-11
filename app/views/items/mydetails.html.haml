@@ -9,9 +9,15 @@
       評価:0 出品数:0
   .user__details__center
     .user__details__center__head
-      .user__details__center__head__
-      .user__details__center__head__
-      .user__details__center__head__
+      .user__details__center__head__icon
+        = icon 'fas', 'laugh', class: 'item-seller__ratings__icon--laugh'
+        %span 0
+      .user__details__center__head__icon
+        = icon 'fas', 'meh', class: 'item-seller__ratings__icon--meh'
+        %span 0
+      .user__details__center__head__icon
+        = icon 'fas', 'frown', class: 'item-seller__ratings__icon--frown'
+        %span 0
     .user__details__center__comment
   .user__details__bottom
     .user__details__bottom__links
