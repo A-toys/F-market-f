@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_062019) do
     t.integer "price", null: false
     t.integer "trading_status", null: false
     t.bigint "seller_user_id", null: false
+    t.integer "category", null: false
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,7 +80,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_062019) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.string "email", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "last_name", null: false
     t.string "first_name", null: false
@@ -89,16 +90,17 @@ ActiveRecord::Schema.define(version: 2019_12_09_062019) do
     t.integer "birthday_month", null: false
     t.integer "birthday_day", null: false
     t.integer "phone_number", null: false
+    t.integer "address_number", null: false
+    t.integer "address_prefecture", null: false
+    t.string "address_name", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.integer "address_phone_number"
     t.text "icon"
     t.text "introduce"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "users"
-    t.string "provider"
-    t.string "uid"
-    t.string "token"
-    t.string "meta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
