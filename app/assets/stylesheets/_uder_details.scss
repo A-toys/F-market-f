@@ -33,8 +33,16 @@
     height: 50px;
     padding-top: 14px;
     width: 360px;
+    margin: 0 auto;
     &__head{
-
+      margin: 0 auto;
+      width: 160px;
+      display: flex;
+      justify-content: space-around;
+      &__icon{
+        margin: 8px 16px 0 0;
+        display: flex;
+      }
     }
     &__comment{
 
@@ -56,4 +64,33 @@
 #my_icon2{
   border-radius: 50%;
   padding: 15px 0px;
+}
+
+.item-seller {
+  &__name {
+    color: #0099e8;
+  }
+  &__ratings {
+    display: flex;
+    &__box {
+      margin: 8px 16px 0 0;
+    }
+    &__icon {
+      &--laugh {
+        color: #ef5185;
+        font-size: 16px;
+        margin-right: 0;
+      }
+      &--meh {
+        color: #fba933;
+        font-size: 16px;
+        margin-right: 0;
+      }
+      &--frown {
+        color: #6ab5d8;
+        font-size: 16px;
+        margin-right: 0;
+      }
+    }
+  }
 }
