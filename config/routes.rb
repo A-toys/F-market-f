@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get '/registration', to: 'items#registration'
   get '/login', to: 'items#login'
   get '/card', to: 'items#card'
+  get '/show', to: 'items#show'
 
 end
