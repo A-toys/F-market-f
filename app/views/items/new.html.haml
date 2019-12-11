@@ -1,8 +1,9 @@
 %body
+=form_for @item do |f|
   .sell
     .sell__header
-    = link_to '', "#"
-      = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+      = link_to  "#" do
+        = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
     .sell__main
       .sell__main__box
         .sell__main__box__title
@@ -13,67 +14,50 @@
             %span#span 必須
             %p#p 最大10枚までアップロードできます
           .sell__main__box__upload__box
-            %input.sell__main__box__upload__pic{name: "file",  type: "file", value:"",style:"display:none;"}/
+            =f.fields_for :images do |i|
+              =i.file_field :image_url
             %pre#pc
               = preserve "ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
         .sell__main__box__form 
           .sell__main__box__form__group
             商品名
             %span#span 必須
-            %input.sell__main__box__form__group__1{name: "name", placeholder:"商品名(必須４０文字まで)", type: "name", value:""}/
+            = f.text_field :name,class:"sell__main__box__form__group__1",placeholder:"商品名(必須４０文字まで)"
+            -# %input.sell__main__box__form__group__1{name: "name", placeholder:"商品名(必須４０文字まで)", type: "name", value:""}/
           .sell__main__box__form__group
             商品の説明
             %span#span 必須
-            %textarea{class:"sell__main__box__form__group__textarea",rows:5,placeholder:"商品の説明(必須1000文字以内)"}
+            =f.text_area :text, class:"sell__main__box__form__group__textarea",placeholder:"商品の説明(必須1000文字以内)"
         .sell__main__box__status
           商品の詳細
           .sell__main__box__status__box
             .sell__main__box__status__box__group
               カテゴリー
               %span#span 必須
-              %select{class: "sell__main__box__status__box__group__1"}
-                %option{value: "0"}  --
-                %option{value: "1"} メンズ
-                %option{value: "2"} レディース
-                %option{value: "3"} ベビー・キッズ
-                %option{value: "4"} インテリア・住まい・子供
+              =f.collection_select :category_id,Category.all,:id,:name,class:"sell__main__box__status__box__group__1",prompt: "--"
             .sell__main__box__status__box__group
               商品の状態
               %span#span 必須
-              %select{class: "sell__main__box__status__box__group__1"}
-                %option{value: "0"}  --
-                %option{value: "1"} 新品、未使用
-                %option{value: "2"} 未使用に近い
-                %option{value: "3"} 目立った傷や汚れなし
-                %option{value: "4"} 傷や汚れあり
-                %option{value: "5"} 全体的に状態が悪い
+              =f.select :condition, [['新品未使用',1],['未使用に近い',2],['目立った傷や汚れなし',3],['傷や汚れあり',4],['全体的に状態が悪い',5]],prompt: "--"
         .sell__main__box__status
           配送について
           .sell__main__box__status__box
             .sell__main__box__status__box__group
               配送料の負担
               %span#span 必須
-              %select{class: "sell__main__box__status__box__group__1"}
-                %option{value: "0"}  --
-                %option{value: "1"} 送料込み（出品者負担）
-                %option{value: "2"} 着払い（購入者負担）
+              =f.select :fee_burden, [['送料込み（出品者負担）',1],['着払い（購入者負担）',2]],prompt: "--"
+            .sell__main__box__status__box__group
+              配送の方法
+              %span#span 必須
+              =f.select :service, [['未定',1],['らくらくメルカリ便',2],['ゆうメール',3],['レターパック',4],['普通郵便（定形、定形外）',5],['クロネコヤマト',6],['ゆうパック',7],['クリックポスト',8],['ゆうパケット',9]],prompt: "--"
             .sell__main__box__status__box__group
               発送元地域
               %span#span 必須
-              %select{class: "sell__main__box__status__box__group__1"}
-                %option{value: "0"}  --
-                %option{value: "1"} 青森
-                %option{value: "2"} 北海道
-                %option{value: "3"} 秋田
-                %option{value: "4"} 宮城
+              =f.select :area, [['北海道',1],['青森',2]],prompt: "--"
             .sell__main__box__status__box__group
               発送までの日数
               %span#span 必須
-              %select{class: "sell__main__box__status__box__group__1"}
-                %option{value: "0"}  --
-                %option{value: "1"} １〜２日で発送
-                %option{value: "2"} ２〜３日で発送
-                %option{value: "3"} ４〜７日で発送
+              =f.select :handing_time, [['１〜２日で発送',1],['２〜３日で発送',2],['４〜７日で発送',3]],prompt: "--"
         .sell__main__box__price
           販売価格(300~9.999,999)
           %span
@@ -82,18 +66,18 @@
             .sell__main__box__price__box__group
               .sell__main__box__price__box__group__left
                 価格
-                %span#price 必須
+                %span#span 必須
               .sell__main__box__price__box__group__right
                 ¥
                 %input.sell__main__box__price__box__group__right__1{name: "price", placeholder:"例) 300", type: "price", value:""}/
             .sell__main__box__price__box__tax
               販売手数料(10%)
               .sell__main__box__price__box__tax__1
-                300円
+                
             .sell__main__box__price__box__profit
               販売利益
               .sell__main__box__price__box__profit__1
-                4700円
+              = f.text_field :price,style:"display:none",id:"price"
         .sell__main__box__header
           %p
             = link_to '禁止されている出品', '#',class:"sell__main__box__header__atag"
@@ -108,7 +92,8 @@
             また、出品をもちまして
             = link_to '加盟店規約', '#',class:"sell__main__box__header__atag"
             に同意したことになります。
-          %button.btn{type:"submit",class:"sell__main__box__header__btn"} 出品する
+            =f.hidden_field :trading_status,value:1
+            =f.submit "出品する",class:"sell__main__box__header__btn"
           %button.btn{type:"submit",class:"sell__main__box__header__btn1"} 戻る
     .sell__main__footer
       .sell__main__footer__box
@@ -116,6 +101,6 @@
           = link_to "プライバシーポリシー","#",class:"sell__main__footer__box__atag"
           = link_to "メルカリ利用規約","#",class:"sell__main__footer__box__atag"
           = link_to "特定商取引に関する表記","#",class:"sell__main__footer__box__atag"
-        = link_to '', "/", id: "atag"
-          = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+        = link_to "#", id: "atag" do
+          = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "sell__main__footer__box__atag__img"
         %p#p ©Meruari,Inc
