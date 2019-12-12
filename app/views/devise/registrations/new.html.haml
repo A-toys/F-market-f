@@ -1,48 +1,32 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title FMarketF
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %script{:crossorigin => "anonymous", :src => "https://kit.fontawesome.com/aacf386ed8.js"}
-  %body
-    .session_wrapper
-      .single_container.nomargin
-        .single_header
-          %a{:href => "/"}
-            %img.single_header__img{:height => "49", :src => "/fmarket_logo_red.svg", :width => "185"}/
-        .session__main
-          .session__main__container
-            .session__main__container__regist
-              %p アカウントをお持ちでない方はこちら
-              = link_to new_user_session_path, class: "btn_regist" do
-                新規会員登録
-            .session__main__container__box
-              = link_to new_user_registration_path, class: "btn_default btn_facebook" do
-                %i.fab.fa-facebook-square.icon_facebook>
-                Facebookでログイン
-              = link_to new_user_registration_path, class: "btn_default btn_google" do
-                %i.fab.fa-google.icon_google>
-                Googleでログイン
-            %form.login__form
-              %input.form_text{:placeholder => "メールアドレス", :type => "text"}/
-              %input.form_text{:placeholder => "パスワード", :type => "text"}/
-            .session__main__container__btn
-              = link_to root_path, class: "btn_login" do
-                ログイン
-              %a.forget_password{:href => "#"} パスワードをお忘れの方はこちら
-        %footer.single__footer
-          %nav
-            %ul
-              %li
-                %a{:href => "#"} プライバシーポリシー
-              %li
-                %a{:href => "#"} メルカリ利用規約
-              %li
-                %a{:href => "#"} 特定商取引に関する表記
-          %a{:href => "/"}
-            %img.single__footer__img{:height => "65px", :src => "/logo_gray.svg", :width => "80px"}/
-          %p © team.F
+#account-page.account-page
+  .account-page__inner.clearfix
+    .account-page__inner--left.account-page__header
+      %h2 Create Account
+      %h5 新規アカウントの作成
+      = render "devise/shared/links"
+    .account-page__inner--right.user-form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .field
+          .field-label
+            = f.label :nickname
+          .field-input
+            = f.text_field :nickname, autofocus: true
+        .field
+          .field-label
+            = f.label :email
+          .field-input
+            = f.email_field :email
+        .field
+          .field-label
+            = f.label :password
+            %i (英数字8文字以上)
+          .field-input
+            = f.password_field :password, autocomplete: "off"
+        .field
+          .field-label
+            = f.label :password_confirmation
+          .field-input
+            = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          = f.submit "Create Account", class: 'btn'

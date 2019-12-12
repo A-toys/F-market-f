@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   root to: 'items#index'
+  resources :users
+  # mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   resources :signup do
     collection do
       get 'step1'
@@ -19,10 +22,10 @@ Rails.application.routes.draw do
     end
   end
   get '/mypage', to: 'items#mypage'
-  get '/registration', to: 'items#registration'
+  # get '/registration', to: 'items#registration'
   get '/login', to: 'items#login'
 
   get '/card', to: 'items#card'
   get '/show', to: 'items#show'
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
 end

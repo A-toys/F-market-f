@@ -4,17 +4,17 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table (:users) do |t|
       ## Database authenticatable
-      t.string :nickname,           null: false, unique: true
-      t.string :email,              null: false, unique: true
-      t.string :encrypted_password, null: false, default: ""
-      t.string :last_name, null: false
-      t.string :first_name, null: false
-      t.string :last_name_kana, null: false
-      t.string :first_name_kana, null: false
-      t.integer :birthday_year, null:false
-      t.integer :birthday_month, null:false
-      t.integer :birthday_day, null:false
-      t.integer :phone_number, null: false, unique: true
+      t.string :nickname         , unique: true
+      t.string :email            , unique: true
+      t.string :encrypted_password, default: ""
+      t.string :last_name
+      t.string :first_name
+      t.string :last_name_kana
+      t.string :first_name_kana
+      t.integer :birthday_year
+      t.integer :birthday_month
+      t.integer :birthday_day
+      t.integer :phone_number, unique: true
       t.text :icon
       t.text :introduce, limit: 10000
 
@@ -31,7 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :users, :meta
 
       ## Trackable
-      # t.integer  :sign_in_count, default: 0, null: false
+      # t.integer  :sign_in_count, default: 0
       # t.datetime :current_sign_in_at
       # t.datetime :last_sign_in_at
       # t.string   :current_sign_in_ip
@@ -44,12 +44,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
-      # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+      # t.integer  :failed_attempts, default: 0 # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
 
-      t.timestamps null: false
+      t.timestamp
     end
 
     add_index :users, :email,                unique: true
