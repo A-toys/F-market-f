@@ -16,24 +16,24 @@
             %img.single_header__img{:height => "49", :src => "/fmarket_logo_red.svg", :width => "185"}/
         .session__main
           .session__main__container
-            .session__main__container__regist
-              %p アカウントをお持ちでない方はこちら
-              = link_to new_user_session_path, class: "btn_regist" do
-                新規会員登録
-            .session__main__container__box
-              = link_to new_user_registration_path, class: "btn_default btn_facebook" do
-                %i.fab.fa-facebook-square.icon_facebook>
-                Facebookでログイン
-              = link_to new_user_registration_path, class: "btn_default btn_google" do
-                %i.fab.fa-google.icon_google>
-                Googleでログイン
-            %form.login__form
-              %input.form_text{:placeholder => "メールアドレス", :type => "text"}/
-              %input.form_text{:placeholder => "パスワード", :type => "text"}/
-            .session__main__container__btn
-              = link_to root_path, class: "btn_login" do
-                ログイン
-              %a.forget_password{:href => "#"} パスワードをお忘れの方はこちら
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .session__main__container__regist
+                %p アカウントをお持ちでない方はこちら
+                = link_to new_user_session_path, class: "btn_regist" do
+                  新規会員登録
+              .session__main__container__box
+                = link_to new_user_registration_path, class: "btn_default btn_facebook" do
+                  %i.fab.fa-facebook-square.icon_facebook>
+                  Facebookでログイン
+                = link_to new_user_registration_path, class: "btn_default btn_google" do
+                  %i.fab.fa-google.icon_google>
+                  Googleでログイン
+              .login__form
+                = f.email_field :email, autofocus: true, class: "form_text", placeholder: "メールアドレス"
+                = f.password_field :password, autocomplete: "off", class: "form_text", placeholder: "パスワード"
+              .session__main__container__btn
+                = f.submit "Log in", class: 'btn_login'
+                %a.forget_password{:href => "#"} パスワードをお忘れの方はこちら
         %footer.single__footer
           %nav
             %ul
