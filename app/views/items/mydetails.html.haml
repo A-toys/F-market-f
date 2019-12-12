@@ -1,0 +1,35 @@
+.details__wrap
+  .user__details
+    .user__details__top
+      = link_to root_path do
+        .user__details__top__icon
+          = image_tag "/myicon.png", size: "150x150", id: "my_icon2"
+        .user__details__top__name
+          nikoniko
+      .user__details__top__number
+        評価:0 出品数:0
+    .user__details__center
+      .user__details__center__head
+        .user__details__center__head__icon
+          = icon 'fas', 'laugh', class: 'item-seller__ratings__icon--laugh facial__expression'
+          %span.user__details__center__head__icon__span 0
+        .user__details__center__head__icon
+          = icon 'fas', 'meh', class: 'item-seller__ratings__icon--meh facial__expression'
+          %span.user__details__center__head__icon__span 0
+        .user__details__center__head__icon
+          = icon 'fas', 'frown', class: 'item-seller__ratings__icon--frown facial__expression'
+          %span.user__details__center__head__icon__span 0
+      .user__details__center__comment
+        ここにコメントが来る
+    .user__details__bottom
+      %ul.user__details__bottom__links
+        %li.user__details__bottom__links__f
+          =link_to "#" do
+            = icon 'fab','facebook-square',id: "f__link"
+        %li.user__details__bottom__links__t
+          =link_to "#" do
+            = icon 'fab','twitter-square',id: "t__link"
+        %li.user__details__bottom__links__l
+          =link_to "#" do
+            = icon 'fab','line',id: "l__link"
+
