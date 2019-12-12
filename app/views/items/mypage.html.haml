@@ -1,4 +1,37 @@
 .mypage
   .mypage__container
-    = render partial: 'myside'
-    .mypage__container__main
+    .mypage__container__side
+      = render partial: 'myside'
+    .mypage__container__list
+      .mypage__container__list__top
+        .mypage__container__list__top__header
+          .mypage__container__list__top__header__icon
+            = render partial: 'items/mypage/icon'
+
+        .mypage__container__list__top__body
+          %ul.mypage_tab.top_tab
+            %li.select お知らせ
+            %li やることリスト
+          %ul.top_content
+            %li
+              =render partial: 'items/mypage/news'
+              .list__btn
+                = link_to "#" do
+                  .list__btn__text
+                    一覧を見る
+            %li.hide
+              = render partial: 'items/mypage/todo'
+
+      .mypage__container__list__under
+        .mypage__container__list__under__header
+          購入した商品
+        .mypage__container__list__under__body
+          %ul.mypage_tab.under_tab
+            %li.select 取引中
+            %li 過去の取引
+          %ul.under_content
+            %li
+              =render partial: 'items/mypage/trading'
+            %li.hide
+              = render partial: 'items/mypage/transaction'
+
