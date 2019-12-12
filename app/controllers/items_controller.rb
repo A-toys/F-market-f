@@ -17,14 +17,19 @@ class ItemsController < ApplicationController
       render new_item_path
     end
   end
-
-  def card
-  end
-
+  
   def show
     render layout: 'items_show'
 
   end
+
+  def card
+  end
+
+  def mydetails
+    
+  end
+
 
   private
   def item_params
