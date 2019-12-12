@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get '/mypage', to: 'items#mypage'
   get '/registration', to: 'items#registration'
   get '/login', to: 'items#login'
+
+  resources :items, only: [:new,:create]
   get '/card', to: 'items#card'
   get '/show', to: 'items#show'
-
 end
