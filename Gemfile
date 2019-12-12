@@ -84,6 +84,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'letter_opener_web','~> 1.0'
 
 group :production do
   gem 'unicorn', '5.4.1'
