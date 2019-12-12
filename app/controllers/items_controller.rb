@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
 
   def show
     render layout: 'items_show'
+
   end
 
   private
