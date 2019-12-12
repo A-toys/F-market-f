@@ -13,11 +13,17 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+
+  resources :items do
+    member do
+      get "mydetails"
+    end
+  end
   get '/mypage', to: 'items#mypage'
   get '/registration', to: 'items#registration'
   get '/login', to: 'items#login'
 
-  resources :items, only: [:new,:create]
   get '/card', to: 'items#card'
   get '/show', to: 'items#show'
+
 end
