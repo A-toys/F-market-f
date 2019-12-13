@@ -20,16 +20,7 @@ class ItemsController < ApplicationController
   
   def show
     render layout: 'items_show'
-
   end
-
-  def card
-  end
-
-  def mydetails
-    
-  end
-
 
   private
   def item_params
