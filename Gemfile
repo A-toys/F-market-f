@@ -84,6 +84,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'gretel'
 
 group :production do
   gem 'unicorn', '5.4.1'
