@@ -2,9 +2,21 @@ crumb :root do
   link "メルカリ", root_path
 end
 
-crumb :root do
-  link "マイページ", 
+crumb :mypage do
+  link "マイページ", mypage_path
 end
+
+crumb :login do
+  link "ログイン", login_path
+end
+
+crumb :card do
+  link "クレジットカード", card_path
+end
+
+
+
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
