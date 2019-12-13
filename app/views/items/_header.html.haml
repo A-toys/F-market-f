@@ -2,17 +2,21 @@
   .header
     .header__upperBox
       .header__upperBox__logo
-        = link_to '', "/"
-        = image_tag "/fmarket_logo_red.svg", size: "134x36"
+<<<<<<< HEAD
+        = link_to image_tag("/fmarket_logo_red.svg", size: "134x36"), root_path
+=======
+        = link_to "/" do
+          = image_tag "/fmarket_logo_red.svg", size: "134x36"
+>>>>>>> ec582f348b2d985249c7d3af671224ae65e35380
       .header__upperBox__search
         %form.header__upperBox__search
           %input.header__upperBox__search__form{placeholder: "何かお探しですか？", type: "text"}/
     .header__bottomBox
       .header__bottomBox__left
         .header__bottomBox__left__category
-          = link_to '', "/"
-          %i.fas.fa-list-ul
-          全ての商品一覧
+          = link_to "/" do
+            %i.fas.fa-list-ul
+            全ての商品一覧
         .header__bottomBox__left__brand
       .header__bottomBox__right
         %ul.header__bottomBox__right__nav
@@ -24,7 +28,7 @@
             %li.header__bottomBox__right__nav__list.todo
               = link_to 'ログアウト', destroy_user_session_path, method: :delete
             %li.header__bottomBox__right__nav__list
-              = link_to 'マイページ', "/mypage"
+              = link_to 'マイページ', mypage_path
           - else
             %li.header__bottomBox__right__nav__list
               = link_to "新規会員登録", registration_path, class: "nav_btn_red"
