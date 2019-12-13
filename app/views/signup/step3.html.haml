@@ -1,8 +1,7 @@
 .session_wrapper
   .signup__header
     %h1.signup__header__logo
-      %a{href: "/"}
-        %img{height: "49px", src: "/fmarket_logo_red.svg", width: "185px"}/
+    = link_to image_tag("/fmarket_logo_red.svg", size: "185x49"), root_path
     %nav#nav.progress-bar.signup__header__bar
       %ol
         %li

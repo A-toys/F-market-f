@@ -1,8 +1,7 @@
 .session_wrapper
   .single_container.nomargin
     .single_header
-      %a{:href => "/"}
-        %img.single_header__img{:height => "49", :src => "/fmarket_logo_red.svg", :width => "185"}/
+      = link_to image_tag("/fmarket_logo_red.svg", size: "185x49"), root_path
     .session__main
       .session__main__container
         .session__main__container__regist
@@ -22,7 +21,7 @@
         .session__main__container__btn
           = link_to root_path, class: "btn_login" do
             ログイン
-          %a.forget_password{:href => "#"} パスワードをお忘れの方はこちら
+          = link_to "パスワードをお忘れの方はこちら","#",class: forget_password
     %footer.single__footer
       %nav
         %ul
