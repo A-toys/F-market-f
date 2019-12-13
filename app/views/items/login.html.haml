@@ -27,12 +27,11 @@
               = link_to new_user_registration_path, class: "btn_default btn_google" do
                 %i.fab.fa-google.icon_google>
                 Googleでログイン
-            %form.login__form
-              %input.form_text{:placeholder => "メールアドレス", :type => "text"}/
-              %input.form_text{:placeholder => "パスワード", :type => "text"}/
-            .session__main__container__btn
-              = link_to root_path, class: "btn_login" do
-                ログイン
+              = form_for(resource, as: resource_name, url: session_path(resource_name)), class: "login__form" do |f|
+                = f.email_field :email, placeholder: 'メールアドレスを入力', class: 'form_text'
+                = f.password_field :password, placeholder: 'メールアドレスを入力', class: 'form_text'
+                .session__main__container__btn
+                = f.submit "次へ進め", class: "btn_default btn_mail"
               %a.forget_password{:href => "#"} パスワードをお忘れの方はこちら
         %footer.single__footer
           %nav

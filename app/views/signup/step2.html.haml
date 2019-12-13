@@ -25,13 +25,15 @@
       .session__main
         .session__main__container
           %h2.session__main__container__title 電話番号の確認
-          = form_for @user, url: signup_index_path, method: :post, html:{class: 'session__main__container__box'} do |f|
+          = form_for @user, url: step3_signup_index_path, method: :get, html:{class: 'session__main__container__box'} do |f|
             .session__main__container__formGroup
               %label{for: "nickname"} 携帯電話の番号
               = f.text_field :phone_number, placeholder: '例) 09012345678', class: 'input__default'
+              - if @user.errors.any?
+                %p.error 10,11文字で入力してください
               %p.formGroup__text 本人確認のため、携帯電話のSMS(ショートメッセージ)を利用して認証を行います。
             .session__main__container__formGroup
-              = f.submit "次へ進め", class: "btn_default btn_mail"
+              = f.submit "次へ進む", class: "btn_default btn_mail"
             %p.formGroup__text ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
             .session__main__container__formGroup
               .session__main__container__formGroup__link
