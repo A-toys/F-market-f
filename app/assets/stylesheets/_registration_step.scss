@@ -9,6 +9,9 @@
   h3{
     font-weight: bold;
   }
+  .error{
+    color: #ea352d;
+  }
   label{
     font-size: 14px;
     font-weight: bold;
@@ -48,6 +51,7 @@
   }
   .input__default{
     height: 28px;
+    width: 100%;
     padding: 10px 16px 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -82,36 +86,36 @@
       }
     }
   }
+  .select__wap{
+    margin-top: 8px;
+    position: relative;
+    z-index: 2;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
   &__sub{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-top: 8px;
+    .field_with_errors{
+      width: 100%;
+      .input__default,.half{
+        width: 75%;
+        border: 1px solid #ea352d;
+      }
+    }
     .fab{
       font-size: 30px;
       margin-right: 10px;
     }
-    .half {
-      width: 38%;
-      margin-right: 10px;
-    }
 
-    .select__wap{
-      height: 48px;
-      width: 100%;
-      padding: 0 10px;
-      cursor: pointer;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      outline: none;
-      background: transparent;
-      background-image: none;
-      box-shadow: none;
-      -webkit-appearance: none;
-      appearance: none;
-      line-height: 1.5;
-      z-index: 3;
-    }
     p{
       font-size: 14px;
       margin: 0 auto 0 0;
@@ -158,6 +162,17 @@
       &:hover{
         opacity: 0.7;
       }
+    }
+  }
+  .field_with_errors{
+    width: 100%;
+    .input__default{
+      width: 100%;
+      border: 1px solid #ea352d;
+    }
+    .half{
+      width: 75%;
+      border: 1px solid #ea352d;
     }
   }
 }
