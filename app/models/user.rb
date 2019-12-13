@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :trackable, :omniauthable, omniauth_providers: [:google, :facebook]
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google, :facebook]
   # validation
   validates :nickname, length: { in: 1..15, message: 'は1〜15文字で記入してください'}, presence: true,on: :validates_step1
   validates :email, length: { maximum: 50, too_long: 'は50文字以内で記入してください'}, presence: true, format: { with: /\A\S+@\S+\.\S+\z/, message: "は「***@***.***」で登録してください"},on: :validates_step1
