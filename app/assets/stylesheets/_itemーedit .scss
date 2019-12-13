@@ -1,0 +1,405 @@
+.edit{
+  
+  width: auto;
+  height: auto;
+  background-color: rgb(245, 245, 245);
+  &__header{
+    height: 128px;
+    text-align: center;
+    width: 100%;
+    &__logo{
+      vertical-align: middle;
+      margin-top: 40px;
+    }
+  }
+  &__main{
+    display: block;
+    width: 100%;
+    height: 2300px;
+    &__box{
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      height: 100%;
+      &__title{
+        padding: 32px 16px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: bold;
+        line-height: 1.5;
+        border-bottom: solid 2px rgb(245, 245, 245);
+      }
+      &__upload{
+        width: 620px;
+        padding: 40px;
+        height: 250px;
+        border-bottom: solid 1px rgb(245, 245, 245);
+        &__header{
+          font-size: 16px;
+          font-weight: bold;
+          #span{
+            background: #ea352d;
+            color: white;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            text-align: center;
+          }
+          #p{
+            margin: 8px 0 0;
+            line-height: 1.5;
+            font-size: 13px;
+            font-weight: lighter;
+          }
+        }
+        &__box{
+          position: relative;
+          margin-left: 0;
+          float: right;
+          width: 538px;
+          padding: 40px;
+          display: block;
+          position: relative;
+          min-height: 80px;
+          background: #f5f5f5;
+          border: 1px dashed #ccc;
+          font-size: 0;
+          text-align: center;
+          cursor: pointer;
+          float: right;
+          margin-left: 2%;
+          margin-top: 16px;
+
+          #pc{
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            right: 16px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+            transform: translate(0, -50%);
+            pointer-events: none;
+          }
+          }
+          
+      }
+      &__form{
+        padding: 40px;
+        border-top: 1px solid #eee;
+        font-weight: 600;
+        font-size: 14px;
+        height: 300px;
+        #span{
+          background: #ea352d;
+          color: white;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+          text-align: center;
+        }
+        &__group{
+          width: 620px;
+          height: 70px;
+          margin-top: 30px;
+          &__1{
+            font-weight: lighter;
+            width: 100%;
+            margin: 8px 0 0;
+            height: 48px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 15px;
+            padding-left: 10px;
+          }
+          &__textarea{
+            margin: 8px 0 0;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 104px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: lighter;
+          }
+        }
+      }
+      &__status{
+        padding: 40px;
+        border-top: 1px solid #eee;
+        height: 250px;
+        &__box{
+          float: right;
+          width: 400px;
+          margin: 0;
+          &__group{
+            margin: 0;
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 14px;
+            &__1{
+              font-weight: lighter;
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 15px;
+              padding-left: 10px;
+            }
+            #span{
+              background: #ea352d;
+              color: white;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+              text-align: center;
+            }
+            #item_category_id{
+              font-weight: lighter;
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 15px;
+              padding-left: 10px;
+            }
+            #item_condition{
+              font-weight: lighter;
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 15px;
+              padding-left: 10px;
+            }
+            #item_fee_burden{
+              font-weight: lighter;
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 15px;
+              padding-left: 10px;
+            }
+            #item_area{
+              font-weight: lighter;
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 15px;
+              padding-left: 10px;
+            }
+            #item_handing_time{
+              font-weight: lighter;
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 15px;
+              padding-left: 10px;
+            }
+            #item_service{
+              font-weight: lighter;
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 15px;
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+      &__price{
+        width: 620px;
+        height: 100px;
+        padding: 40px;
+        margin-top: 150px;
+        border-top: 1px solid #eee;
+        float: left;
+        color: #888;
+        font-size: 14px;
+        
+        
+        &__atag{
+          
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: #0099e8;
+          color: #fff;
+          line-height: 14px;
+          font-size: 12px;
+          text-align: center;
+        }
+        &__box{
+          float: right;
+          width: 400px;
+          margin: 0;
+          &__group{
+            padding: 0 0 24px;
+            border: 0;
+            &__left{
+              width: 50%;
+              line-height: 48px;
+              color: black;
+              font-weight: bold;
+              float: left;
+              #span{
+                background: #ea352d;
+                color: white;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+                text-align: center;
+              }
+            }
+            &__right{
+              width: 50%;
+              float: right;
+              line-height: 48px;
+              &__1{
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                height: 28px;
+              }
+            }
+          }
+          &__tax{
+            padding: 24px 0;
+            border-top: 1px solid #ccc;
+            margin-top: 50px;
+            color: black;
+            font-size: 14px;
+            font-weight: lighter;
+            &__1{
+              float: right;
+            }
+          }
+          &__profit{
+            padding: 24px 0;
+            border-top: 1px solid #ccc;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;  
+            &__1{
+              float: right;
+              font-size: 34px;
+            }
+          }
+        }
+      }
+      &__under{
+        border-top: 3px solid #eee;
+        height: 246px;
+        width: 620px;
+        padding: 40px;
+        margin-top: 570px;
+        font-size: 14px;
+        background-color: #fff;
+        &__atag{
+          color: #0099e8;
+          text-decoration: none;
+          font-size: 14px;
+        }
+        &__btn{
+          margin: 40px 0 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+          text-align: center;
+        }
+        &__btn1{
+          width: 45%;
+          margin: 24px auto 0;
+          background: #aaa;
+          border: 1px solid #aaa;
+          color: #fff;
+          display: block;
+          line-height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
+    }
+  &__footer{
+    z-index: 1;
+    height: 150px;
+    padding: 60px 0;
+    margin: 0 auto;
+    background-color: rgb(245, 245, 245);
+    &__box{
+      width: 456px;
+      height: 150px;
+      margin: 0 auto;
+      text-align: center;
+      #ul{  
+        font-size: 12px;
+      }
+      &__atag{
+        display: inline-block;
+        color: #333;
+        margin: 0 0 0 16px;
+      }
+     #atag{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+      display: block;
+      color: #333;
+      margin-left: 130px;
+     }
+     #p{
+      font-size: 13px;
+     }
+    }
+  }
+  }
+}
