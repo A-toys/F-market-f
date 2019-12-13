@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
     else
       session['devise.google_data'] = request.env['omniauth.auth']
-      redirect_to root_path
+      redirect_to  step1_signup_index_path
     end
   end
 

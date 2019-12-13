@@ -9,19 +9,19 @@
     .header__bottomBox
       .header__bottomBox__left
         .header__bottomBox__left__category
-          = link_to "/" do
-            %i.fas.fa-list-ul
-            全ての商品一覧
+          = link_to '', "/"
+          %i.fas.fa-list-ul
+          全ての商品一覧
         .header__bottomBox__left__brand
       .header__bottomBox__right
         %ul.header__bottomBox__right__nav
           - if user_signed_in?
             %li.header__bottomBox__right__nav__list.good
-              = link_to 'いいね！一覧', "/"
+              = link_to 'いいね！一覧', "#"
             %li.header__bottomBox__right__nav__list.info
               = link_to 'お知らせ', "#"
             %li.header__bottomBox__right__nav__list.todo
-              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+              = link_to 'やることリスト', "#"
             %li.header__bottomBox__right__nav__list
               = link_to 'マイページ', mypage_path
           - else
@@ -30,5 +30,4 @@
             %li.header__bottomBox__right__nav__list
               = link_to "ログイン", new_user_session_path, class: "nav_btn_blue"
             %li.header__bottomBox__right__nav__list
-              = link_to 'マイページ', "/mypage", class: "aaa"
-
+              = link_to 'マイページ', mypage_path, class: "aaa"
