@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_084225) do
+ActiveRecord::Schema.define(version: 2019_12_11_092256) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "zip_code", null: false
-    t.string "prefecture", null: false
-    t.integer "city", null: false
+    t.string "zip_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
     t.string "block", null: false
     t.string "building"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -85,10 +85,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_084225) do
     t.string "first_name"
     t.string "last_name_kana"
     t.string "first_name_kana"
-    t.integer "birthday_year"
-    t.integer "birthday_month"
-    t.integer "birthday_day"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.text "icon"
     t.text "introduce"
     t.string "reset_password_token"
@@ -99,10 +96,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_084225) do
     t.string "uid"
     t.string "token"
     t.string "meta"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
+    t.date "birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
