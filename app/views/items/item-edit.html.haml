@@ -1,0 +1,128 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %title FMarketF
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{crossorigin: "anonymous", src: "https://kit.fontawesome.com/aacf386ed8.js"}
+  %body
+    .edit
+      .edit__header
+        %a{href: "/"}
+          %img{height:"49px", src: "fmarket_logo_red.svg", width: "185px",class:"edit__header__logo"}/
+      .edit__main
+        .edit__main__box
+          .edit__main__box__title
+            商品情報の入力
+          .edit__main__box__upload
+            .edit__main__box__upload__header
+              出品画像
+              %span{id:"span"}必須
+              %p{id:"p"} 最大10枚までアップロードできます
+            .edit__main__box__upload__box
+              %input.edit__main__box__upload__pic{name: "file",  type: "file", value:"",style:"display:none;"}/
+              %pre{id:"pc"}
+                = preserve "ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+          .edit__main__box__form 
+            .edit__main__box__form__group
+              商品名
+              %span{id:"span"}必須
+              %input.edit__main__box__form__group__1{name: "name", placeholder:"商品名(必須４０文字まで)", type: "name", value:""}/
+            .edit__main__box__form__group
+              商品の説明
+              %span{id:"span"}必須
+              %textarea{class:"edit__main__box__form__group__textarea",rows:5,placeholder:"商品の説明(必須1000文字以内)"}
+          .edit__main__box__status
+            商品の詳細
+            .edit__main__box__status__box
+              .edit__main__box__status__box__group
+                カテゴリー
+                %span{id:"span"}必須
+                %select{:class => "edit__main__box__status__box__group__1"}
+                  %option{:value => "0"}  --
+                  %option{:value => "1"} メンズ
+                  %option{:value => "2"} レディース
+                  %option{:value => "3"} ベビー・キッズ
+                  %option{:value => "4"} インテリア・住まい・子供
+              .edit__main__box__status__box__group
+                商品の状態
+                %span{id:"span"}必須
+                %select{:class => "edit__main__box__status__box__group__1"}
+                  %option{:value => "0"}  --
+                  %option{:value => "1"} 新品、未使用
+                  %option{:value => "2"} 未使用に近い
+                  %option{:value => "3"} 目立った傷や汚れなし
+                  %option{:value => "4"} 傷や汚れあり
+                  %option{:value => "5"} 全体的に状態が悪い
+          .edit__main__box__status
+            配送について
+            .edit__main__box__status__box
+              .edit__main__box__status__box__group
+                配送料の負担
+                %span{id:"span"}必須
+                %select{:class => "edit__main__box__status__box__group__1"}
+                  %option{:value => "0"}  --
+                  %option{:value => "1"} 送料込み（出品者負担）
+                  %option{:value => "2"} 着払い（購入者負担）
+              .edit__main__box__status__box__group
+                配送方法
+                %span{id:"span"}必須
+                %select{:class => "edit__main__box__status__box__group__1"}
+                  %option{:value => "0"}  --
+                  %option{:value => "1"} 未定
+                  %option{:value => "2"} らくらくメルカリ便
+                  %option{:value => "3"} レターパック
+                  %option{:value => "4"} ヤマト
+              .edit__main__box__status__box__group
+                発送元地域
+                %span{id:"span"}必須
+                %select{:class => "edit__main__box__status__box__group__1"}
+                  %option{:value => "0"}  --
+                  %option{:value => "1"} 青森
+                  %option{:value => "2"} 北海道
+                  %option{:value => "3"} 秋田
+                  %option{:value => "4"} 宮城
+              .edit__main__box__status__box__group
+                発送までの日数
+                %span{id:"span"}必須
+                %select{:class => "edit__main__box__status__box__group__1"}
+                  %option{:value => "0"}  --
+                  %option{:value => "1"} １〜２日で発送
+                  %option{:value => "2"} ２〜３日で発送
+                  %option{:value => "3"} ４〜７日で発送
+          .edit__main__box__price
+            販売価格(300~9.999,999)
+            %span
+            = link_to '?', '#',class:"edit__main__box__price__atag"
+            .edit__main__box__price__box
+              .edit__main__box__price__box__group
+                .edit__main__box__price__box__group__left
+                  価格
+                  %span#span 必須
+                .edit__main__box__price__box__group__right
+                  ¥
+                  %input.edit__main__box__price__box__group__right__1{name: "price", placeholder:"例) 300", type: "price", value:""}/
+              .edit__main__box__price__box__tax
+                販売手数料(10%)
+                .edit__main__box__price__box__tax__1
+                  300円
+              .edit__main__box__price__box__profit
+                販売利益
+                .edit__main__box__price__box__profit__1
+                  4700円
+          .edit__main__box__under
+            %button.btn{type:"submit",class:"edit__main__box__under__btn"} 変更する
+            %button.btn{type:"submit",class:"edit__main__box__under__btn1"} キャンセル
+      .edit__main__footer
+        .edit__main__footer__box
+          %ul{id:"ul"}
+            = link_to "プライバシーポリシー","#",class:"edit__main__footer__box__atag"
+            = link_to "メルカリ利用規約","#",class:"edit__main__footer__box__atag"
+            = link_to "特定商取引に関する表記","#",class:"edit__main__footer__box__atag"
+          %a{href: "/",id:"atag"}
+            %img{height:"49px", src: "fmarket_logo_red.svg", width: "185px",class:"edit__footer__box__logo"}/
+          %p{id:"p"} ©Meruari,Inc
+                
