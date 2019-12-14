@@ -1,19 +1,20 @@
 class CardController < ApplicationController
   
-  require "payjp"
+  require 'payjp'
+  before_action :set_card
 
   def new
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    card = Card.where(user_id: current_user.id).first
+    redirect_to action: "index" if card.present?
   end
 
-  def pay #PayjpとCardのデータベース作成の実施
+  def create #PayjpとCardのデータベース作成の実施
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-      description: '登録テスト',
+      description: 'test',
       email: current_user.email,
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
@@ -23,9 +24,9 @@ class CardController < ApplicationController
                         card_id: customer.default_card
                       )
       if @card.save
-        redirect_to action: "show"
+        redirect_to action: "index"
       else
-        redirect_to action: "pay"
+        redirect_to action: "create"
       end
     end
   end
@@ -51,5 +52,11 @@ class CardController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
+  end
+
+  private
+
+  def set_card
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id)present?
   end
 end

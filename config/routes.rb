@@ -13,15 +13,11 @@ Rails.application.routes.draw do
       get 'step3'
       get 'step4' # ここで、入力の全てが終了する
       get 'done' # 登録完了後のページ
+      post 'pay'
     end
   end
-resources :card, only: [:new, :show] do
-  collection do
-    post 'show', to: 'card#show'
-    post 'pay', to: 'card#pay'
-    post 'delete', to: 'card#delete'
-  end
-end
+
+  resources :card
 
   resources :items do
     member do
