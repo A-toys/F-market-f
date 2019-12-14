@@ -34,6 +34,10 @@ class SignupController < ApplicationController
     @user = User.new
   end
 
+  def done
+    sign_in User.find(session[:id]) unless user_signed_in?
+  end
+
   def create
     @user = User.new(
       nickname: session[:nickname],
@@ -56,7 +60,7 @@ class SignupController < ApplicationController
     )
 
     if @user.save
-      session[:user_id] = @user.id
+      session[:id] = @user.id
       redirect_to done_signup_index_path
     else
       render '/signup/step1'
