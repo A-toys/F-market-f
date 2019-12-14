@@ -3,7 +3,7 @@ class SignupController < ApplicationController
   before_action :validates_step2, only: :step3
   before_action :validates_step3, only: :step4
   require 'payjp'
-  before_action :set_card
+  # before_action :set_card
 
   def step1
     @user = User.new
@@ -35,10 +35,10 @@ class SignupController < ApplicationController
     session[:block] = user_params[:address_attributes][:block]
     session[:building] = user_params[:address_attributes][:building]
     @user = User.new
+    @card = Card.new
   end
 
   def done
-    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   def create
@@ -62,9 +62,16 @@ class SignupController < ApplicationController
       building: session[:building],
     )
 
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    if params['payjp-token'].blank?
-      redirect_to action: "new"
+    
+    if @user.save
+      session[:id] = @user.id
+      sign_in User.find(session[:id]) unless user_signed_in?
+    else
+      render '/signup/step1'
+    end
+    Payjp.api_key = "sk_test_0e2395683608b1f458779eb8"
+    if params['payjp_token'].blank?
+      render '/signup/step4'
     else
       customer = Payjp::Customer.create(
       description: 'test',
@@ -72,25 +79,18 @@ class SignupController < ApplicationController
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       )
-      @card = Card.new( user_id: current_user.id, 
-                        customer_id: customer.id,
-                        card_id: customer.default_card
-                      )
+      @card = Card.new(
+      user_id: current_user.id, 
+      customer_id: customer.id,
+      card_id: customer.default_card
+      )
       if @card.save
+        redirect_to done_signup_index_path
       else
-        render '/signup/step4'
+        redirect_to action: "create"
       end
     end
-
-    if @user.save
-      session[:id] = @user.id
-      redirect_to done_signup_index_path
-    else
-      render '/signup/step1'
-    end
   end
-
-
 
   private
 
@@ -186,11 +186,9 @@ class SignupController < ApplicationController
     Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
 
   end
-
-  def set_card
-    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id)present?
-  end
-
   
+  # def set_card
+  #   @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  # end
 
 end
