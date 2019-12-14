@@ -24,12 +24,12 @@
       .session__main
         .session__main__container
           %h2.session__main__container__title 支払い方法
-          = form_for @user, url: signup_index_path, method: :post, html:{class: 'session__main__container__box'} do |f|
+          = form_with url: pay_card_index_path, method: :post, html:{class: 'session__main__container__box'} do |f|
             .session__main__container__formGroup
               %label{for: "nickname"}
                 カード番号
                 %span.form__require 必須
-              %input.input__default{placeholder: "半角数字のみ", type: "text"}/
+              = f.text_field class: "input__default", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
               .session__main__container__formGroup__sub
                 %i.fab.fa-cc-visa
                 %i.fab.fa-cc-mastercard
@@ -73,10 +73,10 @@
                 %label{for: "nickname"}
                   セキュリティーコード
                   %span.form__require 必須
-                %input.input__default{placeholder: "カード背面4桁もしくは3桁の番号", type: "text"}/
+                = f.text_field class: "input__default", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"
                 .session__main__container__formGroup__link
                   = link_to root_path do
                     %i.fas.fa-question-circle
                     %p セキュリティーコードとは
                 .session__main__container__formGroup
-                  = f.submit "次へ進め", class: "btn_default btn_mail"
+                  = f.submit "次へ進む", class: "btn_default btn_mail"
