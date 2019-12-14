@@ -2,6 +2,9 @@ class SignupController < ApplicationController
   before_action :validates_step1, only: :step2
   before_action :validates_step2, only: :step3
   before_action :validates_step3, only: :step4
+  require 'payjp'
+  before_action :set_card
+
   def step1
     @user = User.new
   end
@@ -59,6 +62,26 @@ class SignupController < ApplicationController
       building: session[:building],
     )
 
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    if params['payjp-token'].blank?
+      redirect_to action: "new"
+    else
+      customer = Payjp::Customer.create(
+      description: 'test',
+      email: current_user.email,
+      card: params['payjp-token'],
+      metadata: {user_id: current_user.id}
+      )
+      @card = Card.new( user_id: current_user.id, 
+                        customer_id: customer.id,
+                        card_id: customer.default_card
+                      )
+      if @card.save
+      else
+        render '/signup/step4'
+      end
+    end
+
     if @user.save
       session[:id] = @user.id
       redirect_to done_signup_index_path
@@ -66,6 +89,8 @@ class SignupController < ApplicationController
       render '/signup/step1'
     end
   end
+
+
 
   private
 
@@ -161,6 +186,11 @@ class SignupController < ApplicationController
     Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
 
   end
+
+  def set_card
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id)present?
+  end
+
   
 
 end

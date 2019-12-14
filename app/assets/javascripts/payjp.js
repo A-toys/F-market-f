@@ -17,11 +17,9 @@ document.addEventListener(
             $("#cvc").removeAttr("name");
             $("#exp_month").removeAttr("name");
             $("#exp_year").removeAttr("name");//データを自サーバにpostしないように削除
-            $("#card_token").append(
-              $('<input type="hidden" name="payjp-token">').val(response.id)
-            );//取得したトークンを送信できる状態にする
-            document.inputForm.submit();
-            alert("カードの登録が完了しました");
+            var token = response.id;
+            $("#charge-form").append($('<input type="hidden" name="payjp_token" class="payjp-token" />').val(token));
+            $("#charge-form").get(0).submit();
           }else{
             alert("Error");
           }

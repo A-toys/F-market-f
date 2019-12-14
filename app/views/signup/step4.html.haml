@@ -24,7 +24,7 @@
       .session__main
         .session__main__container
           %h2.session__main__container__title 支払い方法
-          = form_with url: pay_card_index_path, id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
+          = form_with url: cards_path, name: "form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
             .session__main__container__formGroup
               %label{for: "nickname"}
                 カード番号
@@ -60,13 +60,13 @@
                 %p 月
                 %select.select__wap#exp_year{name: "exp_year", type: "text"}
                   %option{value: ""} --
-                  %option{value: "19"} 19
-                  %option{value: "20"} 20
-                  %option{value: "21"} 21
-                  %option{value: "22"} 22
-                  %option{value: "23"} 23
-                  %option{value: "24"} 24
-                  %option{value: "25"} 25
+                  %option{value: "2019"} 19
+                  %option{value: "2020"} 20
+                  %option{value: "2021"} 21
+                  %option{value: "2022"} 22
+                  %option{value: "2023"} 23
+                  %option{value: "2024"} 24
+                  %option{value: "2025"} 25
                 %i.fas.fa-chevron-down.select_arrow
                 %p 年
               .session__main__container__formGroup
