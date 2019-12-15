@@ -27,4 +27,9 @@ class PurchaseController < ApplicationController
   redirect_to action: 'done' #完了画面に移動
   end
 
+  private
+
+  def set_card
+    @card = Card.where(user_id: current_user.id).first
+  end
 end

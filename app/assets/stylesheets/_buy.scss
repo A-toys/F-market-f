@@ -3,6 +3,33 @@
   height: auto;
   width: 100%;
   font-size: 14px;
+  &__alert{
+    height: 100px;
+    background-color: rgb(255, 247, 220);
+    &__top{
+      height: 60px;
+      width: 200px;
+      text-align: center;
+      margin: 0 auto;
+      color: #ea352d;
+      .alert__icon{
+        display: inline-block;
+        font-size: 40px;
+        vertical-align: middle;
+      }
+      &__text{
+        display: inline-block;
+        line-height: 60px;
+        vertical-align: middle;
+      }
+    }
+    &__bottom{
+      height: 40px;
+      widows: 200px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
   &__header{
     text-align: center;
     height: 128px;
