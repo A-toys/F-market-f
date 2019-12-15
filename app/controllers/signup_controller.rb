@@ -76,7 +76,7 @@ class SignupController < ApplicationController
       customer = Payjp::Customer.create(
         description: 'test',
         email: current_user.email,
-        card: params['payjp-token'],
+        card: params['payjp_token'],
         metadata: {user_id: current_user.id}
       )
       @card = Card.new(
@@ -84,7 +84,6 @@ class SignupController < ApplicationController
         customer_id: customer.id,
         card_id: customer.default_card
       )
-      binding.pry
       if @card.save
         redirect_to done_signup_index_path
       else
