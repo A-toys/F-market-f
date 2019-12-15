@@ -1,6 +1,7 @@
 .buy
   .buy__header
-    = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+    = link_to root_path do
+      = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
   .buy__centerbox
     .buy__centerbox__head
       購入内容の確認
@@ -10,16 +11,17 @@
           = image_tag "/fmarket_logo_red.svg"
         .buy__centerbox__item__bx__right
           .buy__centerbox__item__bx__right__name
-            シロナSR
+            = @item.name
           .buy__centerbox__item__bx__right__detail
-            ¥3000円 (税込) 送料込み
+            - i_price = @item.price.to_s
+            = "¥" + i_price + " (税込) 送料込み"
     .buy__centerbox__buyinfo
       .buy__centerbox__buyinfo__price
         .buy__centerbox__buyinfo__price__upper
           .buy__centerbox__buyinfo__price__upper__detail
             支払い金額 
           .buy__centerbox__buyinfo__vprice__upper__price
-            ¥3000
+            = "¥" + i_price
         .buy__centerbox__buyinfo__price__under
           %input{type:"checkbox", value:"1"}/
           %label{for:"status_all"} ポイントを使用 (所持ポイント: P180)  
