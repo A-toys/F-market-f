@@ -24,7 +24,7 @@
       .session__main
         .session__main__container
           %h2.session__main__container__title 支払い方法
-          = form_with url: signup_index_path, name: "form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
+          = form_with url: signup_index_path, name: "charge-form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
             .session__main__container__formGroup
               %label{for: "nickname"}
                 カード番号
