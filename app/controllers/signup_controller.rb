@@ -84,6 +84,7 @@ class SignupController < ApplicationController
         customer_id: customer.id,
         card_id: customer.default_card
       )
+      
       if @card.save
         redirect_to done_signup_index_path
       else
