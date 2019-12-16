@@ -32,16 +32,12 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
   config.omniauth :google_oauth2,
-                  ENV['GOOGLE_APP_ID'],
-                  ENV['GOOGLE_APP_SECRET'],
-                  name: :google,
-                  scope: %w(email)
+                  Rails.application.secrets.google_client_id,
+                  Rails.application.secrets.google_client_secret
 
   config.omniauth :facebook,
                   Rails.application.secrets.facebook_client_id,
-                  Rails.application.secrets.facebook_client_secret,
-                  name: :facebook,
-                  scope: %w(email)
+                  Rails.application.secrets.facebook_client_secret
 
 
   # ==> Configuration for any authentication mechanism
