@@ -23,11 +23,11 @@
         %ul
           - @items.each do|item|
             %li.item
-              = link_to '', "#"
-              %figure
-                -item.images.each do|image|
-                  =image_tag "/#{image.image_url}", alt: "商品の写真", class:"picture"
-                  %span#price="¥#{item.price}"
-                  .pic
-                %figcaption.exp
-                  %span=item.name
+              = link_to item_path(item) do
+                %figure
+                  -item.images.each do|image|
+                    =image_tag "/#{image.image_url}", alt: "商品の写真", class:"picture"
+                    %span#price="¥#{item.price}"
+                    .pic
+                  %figcaption.exp
+                    %span=item.name
