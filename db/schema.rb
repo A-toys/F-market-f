@@ -85,15 +85,17 @@ ActiveRecord::Schema.define(version: 2019_12_14_035200) do
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.integer "birthday_year", null: false
-    t.integer "birthday_month", null: false
-    t.integer "birthday_day", null: false
     t.string "phone_number", null: false
     t.text "icon"
     t.text "introduce"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "users"
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
+    t.string "meta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "birthday"
