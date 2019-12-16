@@ -11,10 +11,10 @@
             = link_to step1_signup_index_path, class: "btn_default btn_mail" do
               %i.far.fa-envelope.icon_mail
               メールアドレスで登録する
-            = link_to new_user_registration_path, class: "btn_default btn_facebook" do
+            = link_to user_facebook_omniauth_authorize_path, class: "btn_default btn_facebook" do
               %i.fab.fa-facebook-square.icon_facebook
               Facebookで登録する
-            = link_to new_user_registration_path, class: "btn_default btn_google" do
+            = link_to user_google_oauth2_omniauth_authorize_path, class: "btn_default btn_google" do
               %i.fab.fa-google.icon_google
               Googleで登録する
       %footer.single__footer
