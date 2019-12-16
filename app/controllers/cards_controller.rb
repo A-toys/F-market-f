@@ -40,8 +40,8 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
+      redirect_to action: "new"
     end
-    redirect_to action: "new"
   end
 
   def show #CardデータをPayjpに送り、情報を引き出す
