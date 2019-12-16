@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_user
-
+  before_action :set_user 
+  
   def index
     @items = Item.all
   end
@@ -32,6 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def set_user
-    @user = User.where(id: current_user.id).first
+    @user = User.where(id: current_user.id).first if user_signed_in?
   end
 end
