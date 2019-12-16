@@ -94,8 +94,9 @@
 ## Cardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+|user_id|integer|null: false|
 |customer_id|string|null: false|
+|card_id|string|null: ture|
 ### Association
 - belongs_to user
 pay.jp 導入します
