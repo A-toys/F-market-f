@@ -18,9 +18,6 @@ Rails.application.routes.draw do
 
   
   resources :items do
-    member do
-      get "mydetails"
-    end
     resources :purchase, only: [:index] do
       collection do
         post 'pay', to: 'purchase#pay'
