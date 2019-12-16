@@ -22,6 +22,11 @@ class ItemsController < ApplicationController
     render layout: 'items_show'
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    item.destroy
+  end
+
 
   private
   def item_params
