@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tweets, only: [:destroy]
   devise_for :users, controllers:{
     omniauth_callbacks: "users/omniauth_callbacks"
   }
@@ -18,6 +17,8 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "mydetails"
+      get "showedit"
+      
     end
   end
   get '/mypage', to: 'items#mypage'
