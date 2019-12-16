@@ -22,6 +22,10 @@ class ItemsController < ApplicationController
     render layout: 'items_show'
   end
 
+  def show-edit
+    render layout: 'items_show'
+  end
+
   private
   def item_params
     params.require(:item).permit(:name,:text,:condition,:fee_burden,:service,:area,:handing_time,:price,:trading_status,:service,:category_id, 
