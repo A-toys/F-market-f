@@ -16,6 +16,9 @@ class UsersController < ApplicationController
     @user = User.where(id: current_user.id).first
   end
 
+  def logout
+    @user = User.where(id: current_user.id).first
+  end
 
  private 
    def user_params
