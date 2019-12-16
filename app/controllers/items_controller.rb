@@ -22,9 +22,6 @@ class ItemsController < ApplicationController
     render layout: 'items_show'
   end
 
-  def show_edit
-    render layout: 'items_show'
-  end
 
   private
   def item_params
