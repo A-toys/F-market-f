@@ -32,11 +32,10 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get "mydetails"
+      get "logout"
     end
   end
 
   get '/registration', to: 'items#registration'
-  get '/login', to: 'items#login'
-
   get '/card', to: 'items#card'
 end
