@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2019_12_14_035200) do
     t.integer "price", null: false
     t.integer "trading_status", null: false
     t.bigint "seller_user_id", null: false
-    t.integer "category", null: false
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,12 +79,15 @@ ActiveRecord::Schema.define(version: 2019_12_14_035200) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.string "email", default: "", null: false
+    t.string "email", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
+    t.integer "birthday_year", null: false
+    t.integer "birthday_month", null: false
+    t.integer "birthday_day", null: false
     t.string "phone_number", null: false
     t.text "icon"
     t.text "introduce"
