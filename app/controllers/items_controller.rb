@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     render layout: 'items_show'
   end
 
-  def show-edit
+  def show_edit
     render layout: 'items_show'
   end
 
