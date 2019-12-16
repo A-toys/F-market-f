@@ -1,8 +1,7 @@
 .session_wrapper
   .signup__header
     %h1.signup__header__logo
-      %a{href: "/"}
-        %img{height: "49px", src: "/fmarket_logo_red.svg", width: "185px"}/
+    = link_to image_tag("/fmarket_logo_red.svg", size: "185x49"), root_path
     %nav#nav.progress-bar.signup__header__bar
       %ol
         %li
@@ -25,7 +24,7 @@
       .session__main
         .session__main__container
           %h2.session__main__container__title 支払い方法
-          .session__main__container__box
+          = form_for @user, url: signup_index_path, method: :post, html:{class: 'session__main__container__box'} do |f|
             .session__main__container__formGroup
               %label{for: "nickname"}
                 カード番号
@@ -79,6 +78,5 @@
                   = link_to root_path do
                     %i.fas.fa-question-circle
                     %p セキュリティーコードとは
-              .session__main__container__formGroup
-                = link_to done_signup_index_path, class: "btn_default btn_mail" do
-                  次へ進む
+                .session__main__container__formGroup
+                  = f.submit "次へ進め", class: "btn_default btn_mail"
