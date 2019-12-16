@@ -31,7 +31,7 @@ class CardsController < ApplicationController
   end
 
   def delete #PayjpとCardのデータベースを削除
-    if card.blank?
+    if card.blank?
       redirect_to action: "create"
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
