@@ -25,6 +25,6 @@ Rails.application.routes.draw do
 
   get '/card', to: 'items#card'
   get '/show', to: 'items#show'
-  get '/show_edit', to: 'items#show_edit'
+  get '/showedit', to: 'items#showedit'
 
 end

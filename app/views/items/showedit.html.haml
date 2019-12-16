@@ -58,16 +58,6 @@
             %td
               = link_to '#', class: "item-seller__name" do
                 aaa
-              .item-seller__ratings
-                .item-seller__ratings__box
-                  = icon 'fas', 'laugh', class: 'item-seller__ratings__icon, item-seller__ratings__icon--laugh'
-                  %span 0
-                .item-seller__ratings__box
-                  = icon 'fas', 'meh', class: 'item-seller__ratings__icon, item-seller__ratings__icon--meh'
-                  %span 0
-                .item-seller__ratings__box
-                  = icon 'fas', 'frown', class: 'item-seller__ratings__icon, item-seller__ratings__icon--frown'
-                  %span 0
           %tr
             %th カテゴリー
             %td
@@ -105,7 +95,11 @@
       %span.item-details__price-box--shipping-fee 送料込み
 
     = link_to '#', class: "item-details__buy-btn" do
-      購入画面に進む
+      商品の編集
+    = link_to '#', class: "item-details__buy-btn" do
+      商品を一旦停止する
+    = link_to '#', class: "item-details__buy-btn" do
+      この商品を削除する
 
     .item-details__text
       %p.item-details__text__inner
@@ -135,111 +129,3 @@
         %p.item-message__content__attention 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
         %textarea{type: 'text', class: 'item-message__content__textarea'} 
         %input{type: 'submit', value: 'コメントする', class: 'item-message__content__submit'}
-
-  %ul.item-link-nav
-    %li.item-link-nav__prev
-      = link_to '#' do
-        = icon 'fas', 'chevron-left', class: 'item-link-nav__prev__font, item-link-nav__prev__icon'
-        %span.item-link-nav__prev__font 前の商品
-    %li.item-link-nav__next
-      = link_to '#' do
-        %span.item-link-nav__next__font 次の商品
-        = icon 'fas', 'chevron-right', class: 'item-link-nav__next__font, item-link-nav__next__icon'
-
-  .item-link-sns
-    .item-link-sns__box
-      %ul.item-link-sns__list
-        %li
-          = link_to '#' do
-            = icon 'fab', 'facebook-square', class: 'item-link-sns__icon, item-link-sns__icon--facebook'
-        %li
-          = link_to '#' do
-            =icon 'fab', 'twitter-square', class: 'item-link-sns__icon, item-link-sns__icon--twitter'
-        %li
-          = link_to '#' do
-            = icon 'fab', 'pinterest-square', class: 'item-link-sns__icon, item-link-sns__icon--pinterest'
-
-  .another-items
-    %h2.another-items__head
-      = link_to '#', class: 'another-items__head__title' do
-        aaaさんのその他の出品
-    .another-items__content
-      .another-items__content__box
-        = link_to '#' do
-          .another-items__content__box__image
-
-          .another-items__content__box__text
-            %h3.another-items__name
-              商品1
-            .another-items__info
-              .another-items__info__price
-                ¥1,500
-              .another-items__info__like
-                = icon 'far', 'heart', class: 'another-items__info__like__icon'
-                %span.another-items__info__like__num 0
-
-      .another-items__content__box
-        = link_to '#' do
-          .another-items__content__box__image
-
-          .another-items__content__box__text
-            %h3.another-items__name
-              商品2
-            .another-items__info
-              .another-items__info__price
-                ¥2,000
-              .another-items__info__like
-                = icon 'far', 'heart', class: 'another-items__info__like__icon'
-                %span.another-items__info__like__num 0
-
-      .another-items__content__box
-        = link_to '#' do
-          .another-items__content__box__image
-
-          .another-items__content__box__text
-            %h3.another-items__name
-              商品3
-            .another-items__info
-              .another-items__info__price
-                ¥2,500
-              .another-items__info__like
-                = icon 'far', 'heart', class: 'another-items__info__like__icon'
-                %span.another-items__info__like__num 0
-
-      .another-items__content__box
-        = link_to '#' do
-          .another-items__content__box__image
-
-          .another-items__content__box__text
-            %h3.another-items__name
-              商品4
-            .another-items__info
-              .another-items__info__price
-                ¥3,500
-              .another-items__info__like
-                = icon 'far', 'heart', class: 'another-items__info__like__icon'
-                %span.another-items__info__like__num 0
-
-      .another-items__content__box
-        = link_to '#' do
-          .another-items__content__box__image
-
-          .another-items__content__box__text
-            %h3.another-items__name
-              商品5
-            .another-items__info
-              .another-items__info__price
-                ¥4,500
-              .another-items__info__like
-                = icon 'far', 'heart', class: 'another-items__info__like__icon'
-                %span.another-items__info__like__num 0
-
-  .item-bottom-nav
-    %ul.item-bottom-nav__box
-      %li
-        = link_to '#', class: 'item-bottom-nav__top-path' do
-          エフマケ
-        = icon 'fas', 'chevron-right', class: 'item-bottom-nav__icon'
-
-      %li.item-bottom-nav__link
-        %span TECH特製 描きやすい滑らかボールペン
