@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       get 'step3'
       get 'step4' # ここで、入力の全てが終了する
       get 'done' # 登録完了後のページ
-      post 'pay'
     end
   end
 
@@ -31,7 +30,7 @@ Rails.application.routes.draw do
   end
   resources :users do
     member do
-      get "mydetails"
+      get "profile"
       get "logout"
     end
   end
