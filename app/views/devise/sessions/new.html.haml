@@ -12,7 +12,7 @@
           = link_to new_user_registration_path, class: "btn_default btn_facebook" do
             %i.fab.fa-facebook-square.icon_facebook>
             Facebookでログイン
-          = link_to new_user_registration_path, class: "btn_default btn_google" do
+          = link_to user_google_oauth2_omniauth_authorize_path, class: "btn_default btn_google" do
             %i.fab.fa-google.icon_google>
             Googleでログイン
           = form_for(resource, as: resource_name, url: session_path(resource_name), class: "login__form") do |f|
