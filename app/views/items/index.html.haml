@@ -18,17 +18,15 @@
       .list__title
         %h3 商品一覧
         = link_to 'もっと見る', "#"
-        = link_to 'Signin whith Google', user_google_omniauth_authorize_path
-        = link_to 'Signin whith Facebook', user_facebook_omniauth_authorize_path
       .items
         %ul
           - @items.each do|item|
             %li.item
-              = link_to '', "#"
-              %figure
-                -item.images.each do|image|
-                  =image_tag "/#{image.image_url}", alt: "商品の写真", class:"picture"
-                  %span#price="¥#{item.price}"
-                  .pic
-                %figcaption.exp
-                  %span=item.name
+              = link_to item_path(item) do
+                %figure
+                  -item.images.each do|image|
+                    =image_tag "/#{image.image_url}", alt: "商品の写真", class:"picture"
+                    %span#price="¥#{item.price}"
+                    .pic
+                  %figcaption.exp
+                    %span=item.name
