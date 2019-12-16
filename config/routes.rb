@@ -29,7 +29,8 @@ Rails.application.routes.draw do
       end
     end
   end
-  get '/mypage', to: 'items#mypage'
+  resources :users
+
   get '/registration', to: 'items#registration'
   get '/login', to: 'items#login'
 
