@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :card
+  resources :cards
 
   
   resources :items do
