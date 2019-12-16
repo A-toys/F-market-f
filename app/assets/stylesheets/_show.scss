@@ -31,21 +31,93 @@ td {
     display: flex;
     justify-content: space-between;
     &__left {
-      // 仮置き
-      height: 375px;
+      min-height: 375px;
       width: 300px;
       background-color: rgb(245, 245, 245);
-      &__image {
-        // 仮置き
+      &__main {
         height: 300px;
         width: 300px;
-        background-color: #666;
+        // 以下仮置き
+        &__image {
+          &--1 {
+            height: 300px;
+            width: 300px;
+            background-color: red;
+          }
+          &--2 {
+            height: 300px;
+            width: 300px;
+            background-color: orange;
+          }
+          &--3 {
+            height: 300px;
+            width: 300px;
+            background-color: yellow;
+          }
+          &--4 {
+            height: 300px;
+            width: 300px;
+            background-color: green;
+          }
+          &--5 {
+            height: 300px;
+            width: 300px;
+            background-color: blue;
+          }
+          &--6 {
+            height: 300px;
+            width: 300px;
+            background-color: darkblue;
+          }
+          &--7 {
+            height: 300px;
+            width: 300px;
+            background-color: purple;
+          }
+        }
       }
       &__list {
-        // 仮置き
-        height: 60px;
         width: 300px;
-        background-color: gray;
+        display: flex;
+        flex-wrap: wrap;
+        // 以下仮置き
+        &__image {
+          &--1 {
+            height: 60px;
+            width: 60px;
+            background-color: red;
+          }
+          &--2 {
+            height: 60px;
+            width: 60px;
+            background-color: orange;
+          }
+          &--3 {
+            height: 60px;
+            width: 60px;
+            background-color: yellow;
+          }
+          &--4 {
+            height: 60px;
+            width: 60px;
+            background-color: green;
+          }
+          &--5 {
+            height: 60px;
+            width: 60px;
+            background-color: blue;
+          }
+          &--6 {
+            height: 60px;
+            width: 60px;
+            background-color: darkblue;
+          }
+          &--7 {
+            height: 60px;
+            width: 60px;
+            background-color: purple;
+          }
+        }
       }
     }
     &__right {
