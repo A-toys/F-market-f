@@ -29,7 +29,11 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users
+  resources :users do
+    member do
+      get "mydetails"
+    end
+  end
 
   get '/registration', to: 'items#registration'
   get '/login', to: 'items#login'

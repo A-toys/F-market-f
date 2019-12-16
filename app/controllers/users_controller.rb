@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     @user = User.where(id: current_user.id).first
   end
  
+  def mydetails
+    @user = User.where(id: current_user.id).first
+  end
+
+
  private 
    def user_params
      params.require(:user).permit(:birthday)
