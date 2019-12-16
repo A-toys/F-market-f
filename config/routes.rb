@@ -11,12 +11,22 @@ Rails.application.routes.draw do
       get 'step3'
       get 'step4' # ここで、入力の全てが終了する
       get 'done' # 登録完了後のページ
+      post 'pay'
     end
   end
 
+  resources :cards
+
+  
   resources :items do
     member do
       get "mydetails"
+    end
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
     end
   end
   get '/mypage', to: 'items#mypage'
@@ -24,6 +34,4 @@ Rails.application.routes.draw do
   get '/login', to: 'items#login'
 
   get '/card', to: 'items#card'
-  get '/show', to: 'items#show'
-
 end
