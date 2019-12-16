@@ -81,6 +81,11 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'active_hash'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'gretel'
 
 group :production do
   gem 'unicorn', '5.4.1'
