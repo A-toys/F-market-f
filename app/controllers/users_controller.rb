@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.where(id: current_user).first
   end
  
-  def mydetails
+  def profile
     @user = User.where(id: current_user).first
   end
 
