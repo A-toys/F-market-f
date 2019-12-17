@@ -231,18 +231,18 @@ td {
     &__icon {
       &--laugh {
         color: #ef5185;
-        font-size: 16px;
         margin-right: 0;
       }
       &--meh {
         color: #fba933;
-        font-size: 16px;
         margin-right: 0;
       }
       &--frown {
         color: #6ab5d8;
-        font-size: 16px;
         margin-right: 0;
+      }
+      .facial__expression2{
+        font-size: 16px;
       }
     }
   }
