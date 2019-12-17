@@ -17,7 +17,7 @@
             Googleでログイン
           = form_for(resource, as: resource_name, url: session_path(resource_name), class: "login__form") do |f|
             = f.email_field :email, placeholder: 'メールアドレスを入力', class: 'form_text'
-            = f.password_field :password, placeholder: 'メールアドレスを入力', class: 'form_text'
+            = f.password_field :password, placeholder: 'パスワードを入力', class: 'form_text'
             .session__main__container__btn
             = f.submit "ログイン", class: "btn_default btn_mail"
             = link_to "パスワードをお忘れの方はこちら","#",class: "forget_password"
