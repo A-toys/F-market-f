@@ -9,7 +9,7 @@
           = link_to new_user_registration_path, class: "btn_regist" do
             新規会員登録
         .session__main__container__box
-          = link_to new_user_registration_path, class: "btn_default btn_facebook" do
+          = link_to user_facebook_omniauth_authorize_path, class: "btn_default btn_facebook" do
             %i.fab.fa-facebook-square.icon_facebook>
             Facebookでログイン
           = link_to user_google_oauth2_omniauth_authorize_path, class: "btn_default btn_google" do
