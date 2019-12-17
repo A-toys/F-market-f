@@ -1,10 +1,25 @@
 class UsersController < ApplicationController
 
+  def index
+
+  end
   def create
     params[:user][:birthday] = birthday_join
     @user = User.new(user_params)
   end
+
+  def show
+    @user = User.where(id: current_user).first
+  end
  
+  def mydetails
+    @user = User.where(id: current_user).first
+  end
+
+  def logout
+    @user = User.where(id: current_user).first
+  end
+
  private 
    def user_params
      params.require(:user).permit(:birthday)
@@ -21,6 +36,5 @@ class UsersController < ApplicationController
  
      # 年月日別々できたものを結合して新しいDate型変数を作って返す
      Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
- 
    end
 end
