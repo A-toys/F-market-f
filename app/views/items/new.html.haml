@@ -34,7 +34,7 @@
             .sell__main__box__status__box__group
               カテゴリー
               %span#span 必須
-              =f.collection_select :category_id,Category.all,:id,:name,class:"sell__main__box__status__box__group__1",prompt: "--"
+              =f.collection_select :category,Category.all,:id,:name,class:"sell__main__box__status__box__group__1",prompt: "--"
             .sell__main__box__status__box__group
               商品の状態
               %span#span 必須
