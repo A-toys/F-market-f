@@ -94,6 +94,6 @@
           電話番号の確認
           %i.fas.fa-chevron-right
       %li
-        = link_to logout_user_path, class: "sidebar__mypage__nav__item" do
+        = link_to logout_user_path(current_user), class: "sidebar__mypage__nav__item" do
           ログアウト
           %i.fas.fa-chevron-right
