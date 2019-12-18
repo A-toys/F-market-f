@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_user 
+  
   def index
     @items = Item.all
   end
@@ -6,7 +8,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    # @item.build_category
   end
 
   def create
@@ -17,11 +18,9 @@ class ItemsController < ApplicationController
       render new_item_path
     end
   end
-
-  def card
-  end
-
+  
   def show
+    @item = Item.find(params[:id])
     render layout: 'items_show'
   end
 
@@ -34,5 +33,9 @@ class ItemsController < ApplicationController
   def image_params
     #imageのストロングパラメータの設定.js側でimagesをrequireすれば画像のみを引き出せるように設定する。
     params.require(:images).permit({:images => []})
+  end
+
+  def set_user
+    @user = User.where(id: current_user.id).first if user_signed_in?
   end
 end

@@ -1,8 +1,7 @@
 .session_wrapper
   .signup__header
     %h1.signup__header__logo
-      %a{href: "/"}
-        %img{height: "49px", src: "/fmarket_logo_red.svg", width: "185px"}/
+    = link_to image_tag("/fmarket_logo_red.svg", size: "185x49"), root_path
     %nav#nav.progress-bar.signup__header__bar
       %ol
         %li
@@ -25,102 +24,37 @@
       .session__main
         .session__main__container
           %h2.session__main__container__title お届け先住所入力
-          .session__main__container__box
-            .session__main__container__formGroup
-              %label{for: "nickname"}
-                お名前（全角）
-                %span.form__require 必須
-              .session__main__container__formGroup__sub
-                %input.input__default.half{placeholder: "例）大阪", type: "text"}/
-                %input.input__default.half{placeholder: "例）花子", type: "text"}/
+          = form_for @user, url: step4_signup_index_path, method: :get, html:{class: 'session__main__container__box'} do |f|
+            = f.fields_for :address do |b|
               .session__main__container__formGroup
-                %label{for: "nickname"}
-                  お名前カナ（全角）
-                  %span.form__require 必須
-                .session__main__container__formGroup__sub
-                  %input.input__default.half{placeholder: "例）オオサカ", type: "text"}/
-                  %input.input__default.half{placeholder: "例）ハナコ", type: "text"}/
-              .session__main__container__formGroup
-                %label{for: "nickname"}
+                %label{for: "zip_code"}
                   郵便番号
                   %span.form__require 必須
-                %input.input__default{placeholder: "例）123-4567", type: "text"}/
+                = b.text_field :zip_code, placeholder: '例) 123-1234', class: 'input__default'
               .session__main__container__formGroup
                 %label{for: "nickname"}
                   都道府県
                   %span.form__require 必須
-                .session__main__container__formGroup__sub
-                  %select.select__wap{name: "pref"}
-                    %option{value: ""} 選択してください
-                    %option{selected: "selected", value: "北海道"}
-                      北海道
-                      %i.fas.fa-chevron-down.select_arrow
-                    %option{value: "青森県"} 青森県
-                    %option{value: "岩手県"} 岩手県
-                    %option{value: "宮城県"} 宮城県
-                    %option{value: "秋田県"} 秋田県
-                    %option{value: "山形県"} 山形県
-                    %option{value: "福島県"} 福島県
-                    %option{value: "茨城県"} 茨城県
-                    %option{value: "栃木県"} 栃木県
-                    %option{value: "群馬県"} 群馬県
-                    %option{value: "埼玉県"} 埼玉県
-                    %option{value: "千葉県"} 千葉県
-                    %option{value: "東京都"} 東京都
-                    %option{value: "神奈川県"} 神奈川県
-                    %option{value: "新潟県"} 新潟県
-                    %option{value: "富山県"} 富山県
-                    %option{value: "石川県"} 石川県
-                    %option{value: "福井県"} 福井県
-                    %option{value: "山梨県"} 山梨県
-                    %option{value: "長野県"} 長野県
-                    %option{value: "岐阜県"} 岐阜県
-                    %option{value: "静岡県"} 静岡県
-                    %option{value: "愛知県"} 愛知県
-                    %option{value: "三重県"} 三重県
-                    %option{value: "滋賀県"} 滋賀県
-                    %option{value: "京都府"} 京都府
-                    %option{value: "大阪府"} 大阪府
-                    %option{value: "兵庫県"} 兵庫県
-                    %option{value: "奈良県"} 奈良県
-                    %option{value: "和歌山県"} 和歌山県
-                    %option{value: "鳥取県"} 鳥取県
-                    %option{value: "島根県"} 島根県
-                    %option{value: "岡山県"} 岡山県
-                    %option{value: "広島県"} 広島県
-                    %option{value: "山口県"} 山口県
-                    %option{value: "徳島県"} 徳島県
-                    %option{value: "香川県"} 香川県
-                    %option{value: "愛媛県"} 愛媛県
-                    %option{value: "高知県"} 高知県
-                    %option{value: "福岡県"} 福岡県
-                    %option{value: "佐賀県"} 佐賀県
-                    %option{value: "長崎県"} 長崎県
-                    %option{value: "熊本県"} 熊本県
-                    %option{value: "大分県"} 大分県
-                    %option{value: "宮崎県"} 宮崎県
-                    %option{value: "鹿児島県"} 鹿児島県
-                    %option{value: "沖縄県"} 沖縄県
-                .session__main__container__formGroup
-                  %label{for: "nickname"}
-                    市区町村
-                    %span.form__require 必須
-                  %input.input__default{placeholder: "例）大阪市中央区", type: "text"}/
-                .session__main__container__formGroup
-                  %label{for: "nickname"}
-                    番地
-                    %span.form__require 必須
-                  %input.input__default{placeholder: "例）難波1-1-1", type: "text"}/
-                .session__main__container__formGroup
-                  %label{for: "nickname"}
-                    建物名
-                    %span.form__any 任意
-                  %input.input__default{placeholder: "例）なんばスカイオ15F103", type: "text"}/
-                .session__main__container__formGroup
-                  %label{for: "nickname"}
-                    電話
-                    %span.form__any 任意
-                  %input.input__default{placeholder: "例）012345678", type: "text"}/
-                .session__main__container__formGroup
-                  = link_to step4_signup_index_path, class: "btn_default btn_mail" do
-                    次へ進む
+                = b.collection_select :prefecture_id, Prefecture.all, :id, :name,{},{class: "select__wap"}
+              .session__main__container__formGroup
+                %label{for: "city"}
+                  市区町村
+                  %span.form__require 必須
+                = b.text_field :city, placeholder: '例) 大阪市中央区', class: 'input__default'
+              .session__main__container__formGroup
+                %label{for: "block"}
+                  番地
+                  %span.form__require 必須
+                = b.text_field :block, placeholder: '例) 難波1-1-1', class: 'input__default'
+              .session__main__container__formGroup
+                %label{for: "building"}
+                  ビルディング
+                  %span.form__any 任意
+                = b.text_field :building, placeholder: '例) なんばスカイオ15F101', class: 'input__default'
+              .session__main__container__formGroup
+                %label{for: "phone_number"}
+                  電話
+                  %span.form__any 任意
+                = b.text_field :phone_number, placeholder: '例) 09012341234', class: 'input__default'
+            .session__main__container__formGroup
+              = f.submit "次へ進め", class: "btn_default btn_mail"

@@ -1,8 +1,7 @@
 .session_wrapper
   .signup__header
     %h1.signup__header__logo
-      %a{href: "/"}
-        %img{height: "49px", src: "/fmarket_logo_red.svg", width: "185px"}/
+    = link_to image_tag("/fmarket_logo_red.svg", size: "185x49"), root_path
     %nav#nav.progress-bar.signup__header__bar
       %ol
         %li
@@ -25,12 +24,12 @@
       .session__main
         .session__main__container
           %h2.session__main__container__title 支払い方法
-          .session__main__container__box
+          = form_with url: signup_index_path, name: "charge-form", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
             .session__main__container__formGroup
               %label{for: "nickname"}
                 カード番号
                 %span.form__require 必須
-              %input.input__default{placeholder: "半角数字のみ", type: "text"}/
+              = f.text_field "number", class: "input__default", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
               .session__main__container__formGroup__sub
                 %i.fab.fa-cc-visa
                 %i.fab.fa-cc-mastercard
@@ -43,7 +42,7 @@
                 有効期限
                 %span.form__require 必須
               .session__main__container__formGroup__sub
-                %select.select__wap{name: "month"}
+                %select.select__wap#exp_month{name: "exp_month", type: "text"}
                   %option{value: ""} --
                   %option{value: "01"} 01
                   %option{value: "02"} 02
@@ -59,26 +58,25 @@
                   %option{value: "12"} 12
                 %i.fas.fa-chevron-down.select_arrow
                 %p 月
-                %select.select__wap{name: "year"}
+                %select.select__wap#exp_year{name: "exp_year", type: "text"}
                   %option{value: ""} --
-                  %option{value: "19"} 19
-                  %option{value: "20"} 20
-                  %option{value: "21"} 21
-                  %option{value: "22"} 22
-                  %option{value: "23"} 23
-                  %option{value: "24"} 24
-                  %option{value: "25"} 25
+                  %option{value: "2019"} 19
+                  %option{value: "2020"} 20
+                  %option{value: "2021"} 21
+                  %option{value: "2022"} 22
+                  %option{value: "2023"} 23
+                  %option{value: "2024"} 24
+                  %option{value: "2025"} 25
                 %i.fas.fa-chevron-down.select_arrow
                 %p 年
               .session__main__container__formGroup
                 %label{for: "nickname"}
                   セキュリティーコード
                   %span.form__require 必須
-                %input.input__default{placeholder: "カード背面4桁もしくは3桁の番号", type: "text"}/
+                = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"
                 .session__main__container__formGroup__link
                   = link_to root_path do
                     %i.fas.fa-question-circle
                     %p セキュリティーコードとは
-              .session__main__container__formGroup
-                = link_to done_signup_index_path, class: "btn_default btn_mail" do
-                  次へ進む
+                .session__main__container__formGroup#card_token
+                  = f.submit "次へ進む", class: "btn_default btn_mail", id: "token_submit"
