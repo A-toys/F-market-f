@@ -37,86 +37,18 @@ td {
       &__main {
         height: 300px;
         width: 300px;
-        // 以下仮置き
         &__image {
-          &--1 {
-            height: 300px;
-            width: 300px;
-            background-color: red;
-          }
-          &--2 {
-            height: 300px;
-            width: 300px;
-            background-color: orange;
-          }
-          &--3 {
-            height: 300px;
-            width: 300px;
-            background-color: yellow;
-          }
-          &--4 {
-            height: 300px;
-            width: 300px;
-            background-color: green;
-          }
-          &--5 {
-            height: 300px;
-            width: 300px;
-            background-color: blue;
-          }
-          &--6 {
-            height: 300px;
-            width: 300px;
-            background-color: darkblue;
-          }
-          &--7 {
-            height: 300px;
-            width: 300px;
-            background-color: purple;
-          }
+          height: 300px;
+          width: 300px;
         }
       }
       &__list {
         width: 300px;
         display: flex;
         flex-wrap: wrap;
-        // 以下仮置き
         &__image {
-          &--1 {
-            height: 60px;
-            width: 60px;
-            background-color: red;
-          }
-          &--2 {
-            height: 60px;
-            width: 60px;
-            background-color: orange;
-          }
-          &--3 {
-            height: 60px;
-            width: 60px;
-            background-color: yellow;
-          }
-          &--4 {
-            height: 60px;
-            width: 60px;
-            background-color: green;
-          }
-          &--5 {
-            height: 60px;
-            width: 60px;
-            background-color: blue;
-          }
-          &--6 {
-            height: 60px;
-            width: 60px;
-            background-color: darkblue;
-          }
-          &--7 {
-            height: 60px;
-            width: 60px;
-            background-color: purple;
-          }
+          height: 60px;
+          width: 60px;
         }
       }
     }
