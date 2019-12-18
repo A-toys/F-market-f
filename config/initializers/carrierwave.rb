@@ -17,5 +17,5 @@ CarrierWave.configure do |config|
     config.storage :file
     config.enable_processing = false if Rails.env.test?
   end
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/yuki-baguette'
+  config.asset_host = 'https://yuki-baguet.s3.amazonaws.com'
 end
