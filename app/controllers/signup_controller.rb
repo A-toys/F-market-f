@@ -69,7 +69,7 @@ class SignupController < ApplicationController
     else
       render '/signup/step1'
     end
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = "sk_test_0e2395683608b1f458779eb8"
     if params['payjp_token'].blank?
       render '/signup/step4'
     else
