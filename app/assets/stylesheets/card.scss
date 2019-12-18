@@ -1,3 +1,7 @@
+
+
+
+//支払い方法------------------------
 .mypage__container{
   padding-bottom: 100px;
   &__main-card{
@@ -56,5 +60,138 @@
         opacity: 0.7;
       }
     }
+  }
+}
+
+
+
+
+
+
+
+
+// クレジットカード情報入力画面------------------------
+
+.single_container-input{
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 220px;
+}
+
+.session-credit__main{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+  &__container{
+    margin: 0 auto;
+    background-color: #fff;
+    width:620px;
+    &__title{
+      font-weight: bold;
+      font-size: 24px;
+      padding: 8px 24px;
+      text-align: center;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    &__box{
+      padding: 40px 40px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 343px;
+      margin: 0 auto;
+      .btn_mail{
+        color: #fff;
+        width: 341px;
+        height: 48px;
+        border-radius: 4px;
+        font-size: 14px;
+        position: relative;
+        border: 1px solid #ea352d;
+        background-color: #ea352d;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 16px;
+        .icon_mail{
+          position: absolute;
+          left: 16px;
+          top: 35%;
+          font-size: 16px;
+          font-weight: 400;
+        }
+        &:hover{
+          opacity: 0.7;
+          transition: 300ms;
+        }
+      }
+      .btn_facebook{
+        color: #fff;
+        width: 341px;
+        height: 48px;
+        border-radius: 4px;
+        font-size: 14px;
+        position: relative;
+        border: 1px solid #395184;
+        background-color: #395184;
+        text-align: center;
+        line-height: 50px;
+        .icon_facebook{
+          position: absolute;
+          left: 16px;
+          top: 35%;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.single__footer{
+  width: 100%;
+  bottom: 0;
+  padding: 40px 0;
+  text-align: center;
+  &__img{
+    margin: 0 auto;
+  }
+  nav{
+    font-size: 12px;
+    text-align: center;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    li{
+      margin-left: 16px;
+      display: inline-block;
+      &:first-child{
+        margin: 0;
+        }
+      a:hover{
+          border-bottom: 1px solid rgb(51, 51,51);
+        }
+      }
+    }
+  a{
+    text-align: center;
+    margin: 40px auto 0;
+    &:hover{
+      opacity: 0.7;
+      transition: 300ms;
+    }
+  }
+  p{
+    font-size: 12px;
+    text-align: center;
   }
 }
