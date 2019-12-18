@@ -1,0 +1,9 @@
+.mypage
+  .mypage__container
+    = render partial: 'items/myside'
+    .logoutpage__container__main
+      .logoutpage__container__main__btn
+        = link_to destroy_user_session_path, method: :delete do
+          %button.btn.btn-lg.btn-default{id:"btnlogout"} ログアウト
+
+    
