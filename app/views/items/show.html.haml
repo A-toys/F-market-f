@@ -4,9 +4,52 @@
       TECH特製 描きやすい滑らかボールペン
     .item-details__content
       .item-details__content__left
-        .item-details__content__left__image
+        %ul.item-details__content__left__main 
+          %li.item-details__content__left__main__image
+            .item-details__content__left__main__image--1
 
-        .item-details__content__left__list
+          %li.item-details__content__left__main__image
+            .item-details__content__left__main__image--2
+
+          %li.item-details__content__left__main__image
+            .item-details__content__left__main__image--3
+
+          %li.item-details__content__left__main__image
+            .item-details__content__left__main__image--4
+
+          %li.item-details__content__left__main__image
+            .item-details__content__left__main__image--5
+
+          %li.item-details__content__left__main__image
+            .item-details__content__left__main__image--6
+
+          %li.item-details__content__left__main__image
+            .item-details__content__left__main__image--7
+        // ul, li仮置き要素
+
+        %ul.item-details__content__left__list
+          %li.item-details__content__left__list__image
+            .item-details__content__left__list__image--1
+
+          %li.item-details__content__left__list__image
+            .item-details__content__left__list__image--2
+
+          %li.item-details__content__left__list__image
+            .item-details__content__left__list__image--3
+
+          %li.item-details__content__left__list__image
+            .item-details__content__left__list__image--4
+
+          %li.item-details__content__left__list__image
+            .item-details__content__left__list__image--5
+
+          %li.item-details__content__left__list__image
+            .item-details__content__left__list__image--6
+
+          %li.item-details__content__left__list__image
+            .item-details__content__left__list__image--7
+        // ul, li仮置き要素
+
 
       %table.item-details__content__right
         %tbody
@@ -17,13 +60,13 @@
                 aaa
               .item-seller__ratings
                 .item-seller__ratings__box
-                  = icon 'fas', 'laugh', class: 'item-seller__ratings__icon, item-seller__ratings__icon--laugh'
+                  = icon 'fas', 'laugh', class: 'item-seller__ratings__icon--laugh facial__expression2'
                   %span 0
                 .item-seller__ratings__box
-                  = icon 'fas', 'meh', class: 'item-seller__ratings__icon, item-seller__ratings__icon--meh'
+                  = icon 'fas', 'meh', class: 'item-seller__ratings__icon--meh facial__expression2'
                   %span 0
                 .item-seller__ratings__box
-                  = icon 'fas', 'frown', class: 'item-seller__ratings__icon, item-seller__ratings__icon--frown'
+                  = icon 'fas', 'frown', class: 'item-seller__ratings__icon--frown facial__expression2'
                   %span 0
           %tr
             %th カテゴリー
@@ -61,7 +104,7 @@
       %span.item-details__price-box--tax (税込)
       %span.item-details__price-box--shipping-fee 送料込み
 
-    = link_to '#', class: "item-details__buy-btn" do
+    = link_to item_purchase_index_path(@item), class: "item-details__buy-btn" do
       購入画面に進む
 
     .item-details__text
