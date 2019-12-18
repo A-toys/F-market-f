@@ -9,4 +9,4 @@ $(function(){
     nextArrow: '<span class="next-arrow">&gt;</span>',
     adaptiveHeight: true,
   })
-  });
+});
