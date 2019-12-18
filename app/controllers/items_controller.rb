@@ -21,6 +21,10 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @item = Item.find(params[:id])
+    @user = User.find(@item[:seller_user_id])
+    @items = Item.where(seller_user_id: @user[:id]).where.not(id: params[:id])
+    @images = @item.images
     render layout: 'items_show'
   end
 
