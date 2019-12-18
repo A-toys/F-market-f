@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     member do
       get "profile"
       get "logout"
+      get "info"
     end
   end
 
