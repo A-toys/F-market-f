@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    @item.build_category
+    # @item.build_category
   end
 
   def create
@@ -23,14 +23,16 @@ class ItemsController < ApplicationController
 
   def show
     render layout: 'items_show'
-
   end
 
   private
   def item_params
     params.require(:item).permit(:name,:text,:condition,:fee_burden,:service,:area,:handing_time,:price,:trading_status,:service,:category_id, 
-    images_attributes:[:image_url]).merge(seller_user_id:1)
+    images_attributes:(:image_url)).merge(seller_user_id:1)
   end
 
- 
+  def image_params
+    #imageのストロングパラメータの設定.js側でimagesをrequireすれば画像のみを引き出せるように設定する。
+    params.require(:images).permit({:images => []})
+  end
 end
