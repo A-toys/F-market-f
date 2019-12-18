@@ -14,16 +14,24 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :cards
+
+  
   resources :items do
-    member do
-      get "mydetails"
-      
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
     end
   end
-  get '/mypage', to: 'items#mypage'
+  resources :users do
+    member do
+      get "profile"
+      get "logout"
+    end
+  end
+
   get '/registration', to: 'items#registration'
-  get '/login', to: 'items#login'
-
   get '/card', to: 'items#card'
-
 end

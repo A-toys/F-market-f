@@ -32,10 +32,6 @@
           商品の詳細
           .sell__main__box__status__box
             .sell__main__box__status__box__group
-              カテゴリー
-              %span#span 必須
-              =f.collection_select :category_id,Category.all,:id,:name,class:"sell__main__box__status__box__group__1",prompt: "--"
-            .sell__main__box__status__box__group
               商品の状態
               %span#span 必須
               =f.select :condition, [['新品未使用',1],['未使用に近い',2],['目立った傷や汚れなし',3],['傷や汚れあり',4],['全体的に状態が悪い',5]],prompt: "--"
