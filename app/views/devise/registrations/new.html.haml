@@ -2,8 +2,8 @@
   .session_wrapper
     .single_container
       .single_header
-        = link_to '', "#"
-        = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+        = link_to root_path do
+          = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
       .session__main
         .session__main__container
           %h2.session__main__container__title 新規会員登録
@@ -11,10 +11,10 @@
             = link_to step1_signup_index_path, class: "btn_default btn_mail" do
               %i.far.fa-envelope.icon_mail
               メールアドレスで登録する
-            = link_to new_user_registration_path, class: "btn_default btn_facebook" do
+            = link_to user_facebook_omniauth_authorize_path, class: "btn_default btn_facebook" do
               %i.fab.fa-facebook-square.icon_facebook
               Facebookで登録する
-            = link_to new_user_registration_path, class: "btn_default btn_google" do
+            = link_to user_google_oauth2_omniauth_authorize_path, class: "btn_default btn_google" do
               %i.fab.fa-google.icon_google
               Googleで登録する
       %footer.single__footer
