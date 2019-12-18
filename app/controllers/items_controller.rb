@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    @item.build_category
   end
 
   def create

@@ -2,8 +2,8 @@
   .session_wrapper
     .single_container
       .single_header
-        = link_to '', "#"
-        = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+        = link_to root_path do
+          = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
       .session__main
         .session__main__container
           %h2.session__main__container__title 新規会員登録
