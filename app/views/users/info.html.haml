@@ -1,0 +1,78 @@
+
+.maincontent
+  .mypage__container
+    = render partial: 'items/myside'
+    .maincontent__center
+      .maincontent__center__head
+        本人の情報登録
+      .maincontent__center__box
+        .maincontent__center__box__atencion
+          .maincontent__center__box__atencion__left
+            お客さまの本人情報をご登録ください。
+            %br/
+            登録されたお名前生年月日を変更する場合、本人確認書類が必要になります。
+          .maincontent__center__box__atencion__right
+            本人確認のアップロードについて
+        .maincontent__center__box__info
+          .maincontent__center__box__info__formGroup
+            %label お名前
+            %P 上野和輝
+          .maincontent__center__box__info__formGroup
+            %label お名前カナ
+            %P ウエノカズキ
+          .maincontent__center__box__info__formGroup
+            %label 生年月日
+            %P 1997/03/28
+          .maincontent__center__box__info__formGroup
+            %label{for: "zip_code"}
+              郵便番号
+              %span.form__require 任意
+              %br/
+              %input.maincontent__center__box__info__formGroup__box{placeholder: '例) 123-1234'}      
+          .maincontent__center__box__info__formGroup
+            %label{for: "nickname"}
+              都道府県
+              %span.form__require 任意
+              %br/
+              %input.maincontent__center__box__info__formGroup__box{placeholder: '例) 沖縄'}      
+              
+          .maincontent__center__box__info__formGroup
+            %label{for: "city"}
+            市区町村
+            %span.form__require 任意
+            %br/
+            %input.maincontent__center__box__info__formGroup__box{placeholder: '例) 宝塚市'}      
+                    
+          .maincontent__center__box__info__formGroup
+            %label{for: "block"}
+            番地
+            %span.form__require 任意
+            %br/
+            %input.maincontent__center__box__info__formGroup__box{placeholder: '例) 4-43'}      
+                    
+          .maincontent__center__box__info__formGroup
+            %label{for: "building"}
+            ビルディング
+            %span.form__any 任意
+            %br/
+            %input.maincontent__center__box__info__formGroup__box{placeholder: '例)山本ビル'}      
+                    
+          .maincontent__center__box__info__formGroup
+            %label{for: "phone_number"}
+            電話
+            %span.form__any 任意
+            %br/
+            %input.maincontent__center__box__info__formGroup__box{placeholder: '例)090-0000-0000'}      
+          .maincontent__center__box__info__formGroup
+            %button.btn{type:"submit"}登録する
+            .maincontent__center__box__info__formGroup__under
+              本人情報の登録について
+          
+
+          
+
+
+
+
+
+          
