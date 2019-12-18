@@ -75,6 +75,9 @@
     = link_to item_purchase_index_path(@item), class: "item-details__buy-btn" do
       購入画面に進む
 
+    = link_to item_path(@item), method: :delete do
+      この商品を削除する
+
     .item-details__text
       .item-details__text__inner
         = simple_format(@item.text)
