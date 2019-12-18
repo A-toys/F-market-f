@@ -27,6 +27,7 @@ class PurchaseController < ApplicationController
   end
 
   def done
+    @item.update_attribute(:trading_status, "2")
   end
   private
 
