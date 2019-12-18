@@ -7,13 +7,13 @@
         %ul.item-details__content__left__main
           - @images.each do |image|
             %li.item-details__content__left__main__image
-              = image_tag "/#{image.image_url}"
-
+              %figure#top_img
+                = image_tag "#{image.image_url}", size: "300x300"
         %ul.item-details__content__left__list
           - @images.each do |image|
             %li.item-details__content__left__list__image
-              = image_tag "/#{image.image_url}"
-
+              %figure#list_img
+                = image_tag "#{image.image_url}", size: "60x60"
       %table.item-details__content__right
         %tbody
           %tr

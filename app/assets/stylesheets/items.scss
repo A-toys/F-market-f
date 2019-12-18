@@ -120,7 +120,7 @@
   flex-wrap: wrap;
   margin: -10px;
 }
-figure{
+#figure1{
   background-color: burlywood;
   height: 250px;
   width: 100%;
@@ -133,14 +133,13 @@ figure{
 .picture{
   display: block;
   padding: 0 0 100;
-  height: 100%;
+  height: calc( 100% - 64px );
   overflow: hidden;
   width: 100%;
   bottom: 0;
   position: absolute;
   top: 0;
   vertical-align: top;
-  width: 100%;
   z-index: 1;
 }
 #price{
