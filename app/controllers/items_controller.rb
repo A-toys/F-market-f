@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_user 
+  
   def index
     @items = Item.all
   end
@@ -6,7 +8,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    @item.build_category
   end
 
   def create
@@ -30,5 +31,9 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name,:text,:condition,:fee_burden,:service,:area,:handing_time,:price,:trading_status,:service,:category_id, 
     images_attributes:[:image_url]).merge(seller_user_id:1)
+  end
+
+  def set_user
+    @user = User.where(id: current_user.id).first if user_signed_in?
   end
 end
