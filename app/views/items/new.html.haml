@@ -78,7 +78,6 @@
               .sell__main__box__price__box__group__right
                 ¥
                 = f.text_field :price,class:"sell__main__box__price__box__group__right__1",placeholder:"例) 300"
-                -# %input.sell__main__box__price__box__group__right__1{name: "price", placeholder:"例) 300", type: "price", value:""}/
             .sell__main__box__price__box__tax
               販売手数料(10%)
               .sell__main__box__price__box__tax__1
@@ -86,7 +85,6 @@
             .sell__main__box__price__box__profit
               販売利益
               .sell__main__box__price__box__profit__1
-              -# = f.text_field :price,style:"display:none",id:"price"
         .sell__main__box__header
           %p
             = link_to '禁止されている出品', '#',class:"sell__main__box__header__atag"

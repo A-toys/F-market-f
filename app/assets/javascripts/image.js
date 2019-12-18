@@ -64,10 +64,4 @@ $(function () {
     $(uploadDropBox).removeClass().addClass(`sell-main__upload-drop-box sell-main__upload-drop-box--have-item-${uploadItemLength % 5}`);
   });
 
-  // $(document).on('click', '.sell-main__delete-image', function(){
-  //   $(this).parents('.sell-main__upload-item').remove();
-  //   let uploadItemLength = $(uploadItems).children('li').length;
-  //   $(uploadItems).removeClass().addClass(`sell-main__upload-items sell-main__upload-items--have-item-${uploadItemLength % 5}`);
-  //   $(uploadDropBox).removeClass().addClass(`sell-main__upload-drop-box sell-main__upload-drop-box--have-item-${uploadItemLength % 5}`);
-  // });
 })
