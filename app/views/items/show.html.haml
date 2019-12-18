@@ -107,6 +107,9 @@
     = link_to '#', class: "item-details__buy-btn" do
       購入画面に進む
 
+    = link_to item_path(@item), method: :delete do
+      この商品を削除する
+
     .item-details__text
       %p.item-details__text__inner
         この描き心地！EXPERT級！！

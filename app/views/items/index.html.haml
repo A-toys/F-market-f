@@ -24,7 +24,7 @@
         %ul
           - @items.each do|item|
             %li.item
-              = link_to showedit_item_path(item) do
+              = link_to item_path(item) do
                 %figure
                   -item.images.each do|image|
                     =image_tag "/#{image.image_url}", alt: "商品の写真", class:"picture"

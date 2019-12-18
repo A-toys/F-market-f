@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "mydetails"
-      get "showedit"
       
     end
   end
@@ -26,7 +25,5 @@ Rails.application.routes.draw do
   get '/login', to: 'items#login'
 
   get '/card', to: 'items#card'
-  get '/show', to: 'items#show'
-  get '/showedit', to: 'items#showedit'
 
 end
