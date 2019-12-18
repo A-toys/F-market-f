@@ -31,7 +31,6 @@
       &__upload{
         width: 620px;
         padding: 40px;
-        // height: 250px;
         border-bottom: solid 1px rgb(245, 245, 245);
         &:after{
           content: "";
@@ -105,7 +104,6 @@
           font-size: 0;
           text-align: center;
           cursor: pointer;
-          // float: right;
           margin-left: 2%;
           margin-top: 16px;
           &__preview{
