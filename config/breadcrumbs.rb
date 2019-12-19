@@ -2,8 +2,8 @@ crumb :root do
   link "メルカリ", root_path
 end
 
-crumb :mypage do
-  link "マイページ", mypage_path
+crumb :user do
+  link "マイページ", user_path
 end
 
 crumb :login do
