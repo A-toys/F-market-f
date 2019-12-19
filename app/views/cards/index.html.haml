@@ -11,7 +11,7 @@
       .mypage__container__main-card__form
         .mypage__container__main-card__form__title
           クレジットカード一覧
-        = link_to '', class: "hoge" do
+        = link_to new_card_path, class: "hoge" do
           %button.btn.btn-lg.btn-default{id:"card_btn"} 
             %i.far.fa-credit-card
             クレジットカードを追加する
