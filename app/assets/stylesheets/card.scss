@@ -1,3 +1,7 @@
+
+
+
+//支払い方法------------------------
 .mypage__container{
   padding-bottom: 100px;
   &__main-card{
@@ -57,4 +61,275 @@
       }
     }
   }
+}
+
+
+
+
+
+
+
+
+// クレジットカード情報入力画面------------------------
+
+.single_container-input{
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 220px;
+}
+
+.session-credit__main{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+  &__container{
+    margin: 0 auto;
+    background-color: #fff;
+    width:620px;
+    &__title{
+      font-weight: bold;
+      font-size: 24px;
+      padding: 8px 24px;
+      text-align: center;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    &__box{
+      padding: 40px 40px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 343px;
+      margin: 0 auto;
+      .btn_mail{
+        color: #fff;
+        width: 341px;
+        height: 48px;
+        border-radius: 4px;
+        font-size: 14px;
+        position: relative;
+        border: 1px solid #ea352d;
+        background-color: #ea352d;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 16px;
+        .icon_mail{
+          position: absolute;
+          left: 16px;
+          top: 35%;
+          font-size: 16px;
+          font-weight: 400;
+        }
+        &:hover{
+          opacity: 0.7;
+          transition: 300ms;
+        }
+      }
+    }
+  }
+}
+
+.session-credit__main__container__formGroup{
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  width: 100%;
+  &:first-child{
+    margin: 0%;
+  }
+  h3{
+    font-weight: bold;
+  }
+  .error{
+    color: #ea352d;
+  }
+  label{
+    font-size: 14px;
+    font-weight: bold;
+    .form__require{
+      background-color: #ea352d;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+      font-weight: normal;
+    }
+    .form__any{
+      background-color: #888;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+      font-weight: normal;
+    }
+  }
+  .form__info__text{
+    font-weight: normal;
+    color: #888;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .checkbox__default{
+    margin: 8px 0 0 0;
+    font-weight: normal;
+    label{
+      font-weight: normal;
+    }
+  }
+  .input__default{
+    height: 28px;
+    width: 100%;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .formGroup__text{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 8px;
+    &__center{
+      font-size: 14px;
+      text-align: center;
+      a{
+        color: #0099e8;
+        &:hover{
+          border-bottom: 1px solid #0099e8;
+          opacity: 0.7;
+        }
+      }
+    }
+    &__right{
+      font-size: 14px;
+      text-align: right;
+      display: flex;
+      justify-content: right;
+      a{
+        position: relative;
+        left: 80%;
+      }
+    }
+  }
+  .select__wap{
+    margin-top: 8px;
+    position: relative;
+    z-index: 2;
+    height: 48px;
+    width: 131px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  &__sub{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 8px;
+    .field_with_errors{
+      width: 100%;
+      .input__default,.half{
+        width: 75%;
+        border: 1px solid #ea352d;
+      }
+    }
+    .fab{
+      font-size: 30px;
+      margin-right: 10px;
+    }
+
+    p{
+      font-size: 14px;
+      margin: 0 auto 0 0;
+      position: relative;
+      right: 12px;
+    }
+    .select_arrow1{
+      position: relative;
+      font-size: 16px;
+      right: 220px;
+      color: #888;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .select_arrow2{
+      position: relative;
+      font-size: 16px;
+      right: 150px;
+      color: #888;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .select_arrow3{
+      position: relative;
+      font-size: 16px;
+      right: 85px;
+      color: #888;
+      cursor: pointer;
+      z-index: 1;
+    }
+  }
+  &__link{
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    a{
+      color: #0099e8;
+      display: flex;
+      i{
+        position: relative;
+        top: 3px;
+      }
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+  .field_with_errors{
+    width: 100%;
+    .input__default{
+      width: 100%;
+      border: 1px solid #ea352d;
+    }
+    .half{
+      width: 75%;
+      border: 1px solid #ea352d;
+    }
+  }
+}
+
+.day,.month,.year{
+  height: 48px;
+  width: 100%;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 1.5;
+  z-index: 3;
 }
