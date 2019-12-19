@@ -16,6 +16,11 @@ crumb :new_card do
   parent :cards
 end
 
+crumb :item do
+  link "出品商品画面", item_path
+  parent :user
+end
+
 crumb :logout_user do
   link "ログアウト", logout_user_url
   parent :user
