@@ -3,8 +3,10 @@ class CardsController < ApplicationController
   require 'payjp'
   before_action :set_card
 
+  def index
+  end
+
   def new
-    redirect_to action: "index" if card.present?
   end
 
   def create #PayjpとCardのデータベース作成の実施
@@ -45,7 +47,7 @@ class CardsController < ApplicationController
   def show #CardデータをPayjpに送り、情報を引き出す
     if card.blank?
       redirect_to action: "new"
-    else
+    else  
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
