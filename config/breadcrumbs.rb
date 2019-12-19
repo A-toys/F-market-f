@@ -3,19 +3,23 @@ crumb :root do
 end
 
 crumb :user do
-  link "マイページ", user_path
+  link "マイページ", user_path(current_user)
+end
+
+crumb :cards do
+  link "クレジットカード", cards_path
+  parent :user
+  parent :user
+end
+
+crumb :new_card do
+  link "クレジットカード情報入力", new_card_path
+  parent :cards
 end
 
 crumb :login do
   link "ログイン", login_path
 end
-
-crumb :card do
-  link "クレジットカード", card_path
-end
-
-
-
 
 # crumb :projects do
 #   link "Projects", projects_path
