@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2019_12_18_053313) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "item_id", null: false
@@ -77,6 +86,15 @@ ActiveRecord::Schema.define(version: 2019_12_18_053313) do
     t.index ["item_id"], name: "index_orders_on_item_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", null: false
@@ -91,11 +109,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_053313) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "users"
-    t.string "provider"
-    t.string "uid"
-    t.string "token"
-    t.string "meta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "birthday"
@@ -104,6 +117,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_053313) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "categories", "items"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
@@ -111,4 +125,5 @@ ActiveRecord::Schema.define(version: 2019_12_18_053313) do
   add_foreign_key "items", "users", column: "seller_user_id"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users", column: "buyer_user_id"
+  add_foreign_key "sns_credentials", "users"
 end
