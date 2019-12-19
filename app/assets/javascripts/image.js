@@ -23,7 +23,6 @@ $(function () {
       reader.onload = (function (file) {
         return function (e) {
           let itemLength = $(uploadItems).children('li').length;
-          console.log(itemLength)
           if (itemLength == 10) {
             return false;
           } else if(itemLength < 4) {
