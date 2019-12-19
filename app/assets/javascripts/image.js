@@ -1,0 +1,66 @@
+$(function () {
+  $('.sell__main__box__upload__box__preview').on('dragover', function (e) {
+    e.preventDefault();
+  })
+  $('.sell__main__box__upload__box__preview').on('drop', function (event) {
+    event.preventDefault();
+
+  });
+  const uploadItems = '#image_ul';
+  const uploadItems2 = '#box__drop2';
+  const uploadDropBox = '#guide_box';
+  const uploadDropBox2 = '#guide_box2';
+  // 画像アップロード時プレビュー表示
+  $('#image_uploder').on('change', function (e) {
+    let files = e.target.files;
+    $.each(files, function (index, file) {
+      let reader = new FileReader();
+      if (file.type.indexOf("image") < 0) {
+        alert("画像ファイルを指定してください。");
+        return false;
+      }
+      //アップロードした画像を設定する
+      reader.onload = (function (file) {
+        return function (e) {
+          let itemLength = $(uploadItems).children('li').length;
+          if (itemLength == 10) {
+            return false;
+          } else if(itemLength < 4) {
+            $(uploadItems).prepend(`<li class="sell__main__box__upload__items">
+                                  <figure class="sell__main__box__upload__items__figure">
+                                    <img src='${e.target.result}' title='${file.name}' width="105px" height="120px">
+                                  </figure>
+                                  <div class="sell__main__box__upload__items__btn">
+                                    <a class="sell__main__box__upload__items__btn__edit" href="#">編集</a>
+                                    <a class="sell__main__box__upload__items__btn__delite" href="#">削除</a>
+                                  </div>
+                                 </li>`);
+            $(uploadDropBox).removeClass().addClass(`sell__main__box__upload__box__preview__guide-${itemLength + 1}`)
+          }else if(itemLength >= 4) {
+              $(uploadDropBox).css('display', 'none')
+              $(uploadDropBox2).css('display','block');
+              $(uploadItems2).css('display','block');
+              $(uploadItems).prepend(`<li class="sell__main__box__upload__items">
+                                  <figure class="sell__main__box__upload__items__figure">
+                                  <img src='${e.target.result}' title='${file.name}' width="105px" height="120px">
+                                </figure>
+                                <div class="sell__main__box__upload__items__btn">
+                                  <a class="sell__main__box__upload__items__btn__edit" href="#">編集</a>
+                                  <a class="sell__main__box__upload__items__btn__delite" href="#">削除</a>
+                                </div>
+                              </li>`);
+            $(uploadDropBox).removeClass().addClass(`sell__main__box__upload__box__preview__guide-second-${itemLength + 1}`)
+            }
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    });
+  });
+  $(document).on('click', '.sell-main__delete-image', function () {
+    $(this).parents('.sell-main__upload-item').remove();
+    let uploadItemLength = $(uploadItems).children('li').length;
+    $(uploadItems).removeClass().addClass(`sell-main__upload-items sell-main__upload-items--have-item-${uploadItemLength % 5}`);
+    $(uploadDropBox).removeClass().addClass(`sell-main__upload-drop-box sell-main__upload-drop-box--have-item-${uploadItemLength % 5}`);
+  });
+
+})

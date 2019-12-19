@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_053313) do
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
     t.index ["seller_user_id"], name: "index_items_on_seller_user_id"
   end
 
