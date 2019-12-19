@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy, :edit]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
   before_action :set_user 
   
   def index
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if item.update(item_params)
+    if @item.update(item_params)
       redirect_to root_path
     else
       render item_path
