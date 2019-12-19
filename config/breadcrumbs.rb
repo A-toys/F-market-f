@@ -9,7 +9,6 @@ end
 crumb :cards do
   link "クレジットカード", cards_path
   parent :user
-  parent :user
 end
 
 crumb :new_card do
@@ -17,8 +16,14 @@ crumb :new_card do
   parent :cards
 end
 
-crumb :login do
-  link "ログイン", login_path
+crumb :item do
+  link "出品商品画面", item_path
+  parent :user
+end
+
+crumb :logout_user do
+  link "ログアウト", logout_user_url
+  parent :user
 end
 
 # crumb :projects do
