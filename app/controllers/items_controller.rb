@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit]
   before_action :set_user 
   
   def index
@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
     @user = User.find(@item[:seller_user_id])
     @items = Item.where(seller_user_id: @user[:id]).where.not(id: params[:id])
     @images = @item.images
@@ -35,6 +34,18 @@ class ItemsController < ApplicationController
       render item_path
     end
   end
+
+  def edit
+    @item.images.build
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+    redirect_to root_path
+  end
+     
+   
 
 
   private
