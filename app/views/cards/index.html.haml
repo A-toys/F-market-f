@@ -1,17 +1,17 @@
--# - breadcrumb :card
--# .bread
--#   .bread__name
--#     = breadcrumbs 
+- breadcrumb :cards
+.bread
+  .bread__name
+    = breadcrumbs 
 .mypage
   .mypage__container
-    = render partial: 'myside'
+    = render partial: 'items/myside'
     .mypage__container__main-card
       .mypage__container__main-card__h2
         支払い方法
       .mypage__container__main-card__form
         .mypage__container__main-card__form__title
           クレジットカード一覧
-        = link_to '', class: "hoge" do
+        = link_to new_card_path, class: "hoge" do
           %button.btn.btn-lg.btn-default{id:"card_btn"} 
             %i.far.fa-credit-card
             クレジットカードを追加する
