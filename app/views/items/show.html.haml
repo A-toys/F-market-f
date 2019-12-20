@@ -1,3 +1,7 @@
+- breadcrumb :item
+.bread
+  .bread__name
+    = breadcrumbs 
 .item-details-body
   .item-details
     %h1.item-details__name
@@ -77,6 +81,9 @@
 
     = link_to item_path(@item), method: :delete do
       この商品を削除する
+    
+    = link_to edit_item_path(@item) do
+      この商品を編集する
 
     .item-details__text
       .item-details__text__inner

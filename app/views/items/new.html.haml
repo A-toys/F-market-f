@@ -1,5 +1,5 @@
 %body
-=form_for @item do |f|
+=form_for @item,html: {id:'new_item'} do |f|
   .sell
     .sell__header
       = link_to  "#" do
@@ -14,16 +14,28 @@
             %span#span 必須
             %p#p 最大10枚までアップロードできます
           .sell__main__box__upload__box
-            =f.fields_for :images do |i|
-              =i.file_field :image_url
-            %pre#pc
-              = preserve "ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+            =f.fields_for :images,html: {id:'new_item'} do |i|
+              .sell__main__box__upload__box__preview.clearfix
+                %ul#image_ul
+                .sell__main__box__upload__box__preview__guide-0{id:"guide_box"}
+                  %pre#pc
+                    %i.fas.fa-camera.fa-lg
+                    = preserve "<br>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+                %label{id:"box__drop"}
+                  =i.file_field :image_url,id:"image_uploder",style:"display:none"
+              .sell__main__box__upload__box__preview.clearfix
+                %ul#image_ul2
+                .sell__main__box__upload__box__preview__guide-second{id:"guide_box2"}
+                  %pre#pc
+                    %i.fas.fa-camera.fa-lg
+                    = preserve "<br>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+                %label{id:"box__drop2"}
+                  =i.file_field :image_url,id:"image_uploder",style:"display:none"
         .sell__main__box__form 
           .sell__main__box__form__group
             商品名
             %span#span 必須
             = f.text_field :name,class:"sell__main__box__form__group__1",placeholder:"商品名(必須４０文字まで)"
-            -# %input.sell__main__box__form__group__1{name: "name", placeholder:"商品名(必須４０文字まで)", type: "name", value:""}/
           .sell__main__box__form__group
             商品の説明
             %span#span 必須
@@ -66,7 +78,7 @@
               .sell__main__box__price__box__group__right
                 ¥
                 = f.text_field :price, class: "sell__main__box__price__box__group__right__1", placeholder: "例) 300"
-                -# %input.sell__main__box__price__box__group__right__1{name: "price", placeholder:"例) 300", type: "price", value:""}/
+                
             .sell__main__box__price__box__tax
               販売手数料(10%)
               .sell__main__box__price__box__tax__1
@@ -74,7 +86,7 @@
             .sell__main__box__price__box__profit
               販売利益
               .sell__main__box__price__box__profit__1
-              -# = f.text_field :price,style:"display:none",id:"price"
+              
         .sell__main__box__header
           %p
             = link_to '禁止されている出品', '#',class:"sell__main__box__header__atag"
