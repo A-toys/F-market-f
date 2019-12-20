@@ -1,13 +1,13 @@
-#top_img{
-  height: 300px;
-  width: 300px;
+figure {
   margin: 0;
-}
-#list_img{
-  height: 60px;
-  width: 60px;
-  margin: 0;
-
+  #top_img{
+    height: 300px;
+    width: 300px;
+  }
+  #list_img{
+    height: 60px;
+    width: 60px;
+  }
 }
 
 
@@ -45,6 +45,7 @@ td {
     justify-content: space-between;
     &__left {
       min-height: 375px;
+      height: 100%;
       width: 300px;
       background-color: rgb(245, 245, 245);
       &__main {
