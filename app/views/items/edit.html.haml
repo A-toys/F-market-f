@@ -37,7 +37,7 @@
             .edit__main__box__status__box__group
               配送料の負担
               %span#span 必須
-              = f.select :fee_burden, Item.fee_burdems.keys, prompt: "--"
+              = f.select :fee_burden, Item.fee_burdens.keys, prompt: "--"
             .edit__main__box__status__box__group
               配送方法
               %span#span 必須
@@ -45,7 +45,7 @@
             .edit__main__box__status__box__group
               発送元地域
               %span#span 必須
-              =f.colection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
+              =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
             .edit__main__box__status__box__group
               発送までの日数
               %span#span 必須
