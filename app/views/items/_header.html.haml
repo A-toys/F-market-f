@@ -23,12 +23,10 @@
             %li.header__bottomBox__right__nav__list.todo
               = link_to 'やることリスト', root_path, method: :delete
             %li.header__bottomBox__right__nav__list
-              = link_to 'マイページ', user_path(@user)
+              = link_to 'マイページ', user_path(current_user)
           - else
             %li.header__bottomBox__right__nav__list
               = link_to "新規会員登録", new_user_registration_path, class: "nav_btn_red"
             %li.header__bottomBox__right__nav__list
               = link_to "ログイン", new_user_session_path, class: "nav_btn_blue"
-            %li.header__bottomBox__right__nav__list
-              = link_to 'マイページ', "/mypage", class: "aaa"
 

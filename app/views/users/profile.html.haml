@@ -3,9 +3,12 @@
     .user__details__top
       = link_to root_path do
         .user__details__top__icon
-          = image_tag "/myicon.png", size: "150x150", id: "my_icon2"
+          - if @user.icon?
+            = image_tag "#{user.icon}", size: "150x150", id: "my_icon2"
+          - else
+            = image_tag "/myicon.png", size: "150x150", id: "my_icon2"
         .user__details__top__name
-          nikoniko
+          = @user.nickname
       .user__details__top__number
         評価:0 出品数:0
     .user__details__center
