@@ -15,6 +15,8 @@ class Item < ApplicationRecord
   validates :service, presence: true
   validates :prefecture_id, presence: true
   validates :handing_time, presence: true
+  validates :price, presence: true
+
 
   enum condition: {'新品未使用': 1, '未使用に近い': 2, '目立った傷や汚れなし': 3, '傷や汚れあり': 4, '全体的に状態が悪い': 5}
   enum fee_burden: {'送料込み（出品者負担）': 1, '着払い（購入者負担）': 2}
