@@ -314,6 +314,7 @@
             line-height: 1.5;
             font-size: 15px;
             padding-left: 10px;
+            box-sizing: border-box;
           }
           &__textarea{
             margin: 8px 0 0;
@@ -327,6 +328,7 @@
             font-size: 16px;
             line-height: 1.5;
             font-weight: lighter;
+            box-sizing: border-box;
           }
         }
       }
@@ -390,7 +392,7 @@
               font-size: 15px;
               padding-left: 10px;
             }
-            #item_area{
+            #item_prefecture_id{
               font-weight: lighter;
               width: 100%;
               margin: 8px 0 0;
