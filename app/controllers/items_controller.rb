@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :edit, :update]
   before_action :set_user 
-  
+
   def index
     @items = Item.all
   end
@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    render layout: 'devise'
   end
 
   def create
@@ -16,7 +17,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render new_item_path
+      redirect_to new_item_path
     end
   end
   
@@ -69,4 +70,5 @@ class ItemsController < ApplicationController
   def set_user
     @user = User.where(id: current_user.id).first if user_signed_in?
   end
+
 end
