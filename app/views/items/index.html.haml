@@ -3,9 +3,11 @@
     .slider
       %ul.slider__box
         %li
-          .green
+          .slick_1
+            = image_tag "/F-Market1.png", size: "640x390", class: "slick_img"
         %li
-          .red
+          .slick_2
+            = image_tag "/F-Market2.png", size: "1040x390", class: "slick_img"
     .category
       %h2 人気のカテゴリー
       .category__type
@@ -23,9 +25,9 @@
           - @items.each do|item|
             %li.item
               = link_to item_path(item) do
-                %figure
+                %figure#figure1
                   -item.images.each do|image|
-                    =image_tag "/#{image.image_url}", alt: "商品の写真", class:"picture"
+                    =image_tag "#{image.image_url}", alt: "商品の写真", class:"picture"
                     %span#price="¥#{item.price}"
                     .pic
                   %figcaption.exp

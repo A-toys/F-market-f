@@ -15,7 +15,6 @@
   &__main{
     display: block;
     width: 100%;
-    height: 2300px;
     &__box{
       width: 700px;
       margin: 0 auto;
@@ -119,6 +118,7 @@
             line-height: 1.5;
             font-size: 15px;
             padding-left: 10px;
+            box-sizing: border-box;
           }
           &__textarea{
             margin: 8px 0 0;
@@ -132,6 +132,7 @@
             font-size: 16px;
             line-height: 1.5;
             font-weight: lighter;
+            box-sizing: border-box;
           }
         }
       }
@@ -207,7 +208,7 @@
               font-size: 15px;
               padding-left: 10px;
             }
-            #item_area{
+            #item_prefecture_id{
               font-weight: lighter;
               width: 100%;
               margin: 8px 0 0;

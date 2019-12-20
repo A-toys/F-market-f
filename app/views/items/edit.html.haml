@@ -1,13 +1,85 @@
-.mypage
-  .mypage__container
-    = render partial: 'myside'
-    .mypage__container__main
-      .mypage__container__main__h2
-        プロフィール
-      .mypage__container__main__box
-        .mypage__container__main__box__pic
-        %input.mypage__container__main__box__name{name: :"name", placeholder: :"名前", type: :"name", value: :""}
-      .mypage__container__main__form
-        %textarea{id:"textarea",placeholder:"例）こんにちは！ご覧！ご覧いただきありがとうございます"}
-        %button.btn.btn-lg.btn-default{id:"btn"} 変更する
-         
+
+=form_for @item do |f|
+  .edit
+    .edit__header
+      = link_to  "#" do
+        = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+    .edit__main
+      .edit__main__box
+        .edit__main__box__title
+          商品情報の入力
+        .edit__main__box__upload
+          .edit__main__box__upload__header
+            出品画像
+            %span#span 必須
+            %p{id:"p"} 最大10枚までアップロードできます
+          .edit__main__box__upload__box
+            = f.fields_for :images do |i|
+              = i.file_field :image_url
+            %pre{id:"pc"}
+              = preserve "ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+        .edit__main__box__form 
+          .edit__main__box__form__group
+            商品名
+            %span#span 必須
+            = f.text_field :name,class:"edit__main__box__form__group__1",placeholder:"商品名(必須４０文字まで)"
+          .edit__main__box__form__group
+            商品の説明
+            %span#span 必須
+            = f.text_area :text,class:"edit__main__box__form__group__1",placeholder:"商品の説明(必須1000文字以内)"
+          .edit__main__box__status__box__group
+            商品の状態
+            %span#span 必須
+            = f.select :condition, Item.conditions.keys, prompt: "--"
+        .edit__main__box__status
+          配送について
+          .edit__main__box__status__box
+            .edit__main__box__status__box__group
+              配送料の負担
+              %span#span 必須
+              = f.select :fee_burden, Item.fee_burdems.keys, prompt: "--"
+            .edit__main__box__status__box__group
+              配送方法
+              %span#span 必須
+              =f.select :service,Item.services.keys,prompt: "--"
+            .edit__main__box__status__box__group
+              発送元地域
+              %span#span 必須
+              =f.colection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
+            .edit__main__box__status__box__group
+              発送までの日数
+              %span#span 必須
+              =f.select :handing_time,Item.handing_times.keys,prompt: "--"
+        .edit__main__box__price
+          販売価格(300~9.999,999)
+          %span
+          = link_to '?', '#',class:"edit__main__box__price__atag"
+          .edit__main__box__price__box
+            .edit__main__box__price__box__group
+              .edit__main__box__price__box__group__left
+                価格
+                %span#span 必須
+              .edit__main__box__price__box__group__right
+                ¥
+                = f.text_field :price, class:"edit__main__box__price__box__group__right__1",placeholder:"例) 300"
+            .edit__main__box__price__box__tax
+              販売手数料(10%)
+              .edit__main__box__price__box__tax__1
+
+              .edit__main__box__price__box__profit
+                販売利益
+              .edit__main__box__price__box__profit__1
+              -#= f.text_field :price,style:"display:none",id:"price"
+        .edit__main__box__under
+          %button.btn{type:"submit",class:"edit__main__box__under__btn"} 変更する
+          %button.btn{type:"submit",class:"edit__main__box__under__btn1"} キャンセル
+    .edit__main__footer
+      .edit__main__footer__box
+        %ul#ul
+          = link_to "プライバシーポリシー","#",class:"edit__main__footer__box__atag"
+          = link_to "メルカリ利用規約","#",class:"edit__main__footer__box__atag"
+          = link_to "特定商取引に関する表記","#",class:"edit__main__footer__box__atag"
+        = link_to "#", id: "atag" do
+          = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "sell__main__footer__box__atag__img"
+        %p#p ©Meruari,Inc
+              

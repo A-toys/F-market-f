@@ -2,20 +2,29 @@ crumb :root do
   link "メルカリ", root_path
 end
 
-crumb :mypage do
-  link "マイページ", mypage_path
+crumb :user do
+  link "マイページ", user_path(current_user)
 end
 
-crumb :login do
-  link "ログイン", login_path
+crumb :cards do
+  link "クレジットカード", cards_path
+  parent :user
 end
 
-crumb :card do
-  link "クレジットカード", card_path
+crumb :new_card do
+  link "クレジットカード情報入力", new_card_path
+  parent :cards
 end
 
+crumb :item do
+  link "出品商品画面", item_path
+  parent :user
+end
 
-
+crumb :logout_user do
+  link "ログアウト", logout_user_url
+  parent :user
+end
 
 # crumb :projects do
 #   link "Projects", projects_path
