@@ -26,17 +26,19 @@
   height: 390px;
   width: 100vw;
 }
-.green{
-  background-color: green;
+.slick_1{
   height: 390px;
   width: 100vw;
-  opacity: 0.3;
+  .slick_img{
+    margin: 0 auto;
+  }
 }
-.red{
-  background-color: red;
+.slick_2{
   height: 390px;
   width: 100vw;
-  opacity: 0.3;
+  .slick_img{
+    margin: 0 auto;
+  }
 }
 .category{
   width: calc(100vw - 40px);

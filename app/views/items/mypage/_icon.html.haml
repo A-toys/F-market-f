@@ -2,8 +2,11 @@
   .wrapping
     .myicon
       .myicon__img
-        = image_tag "/myicon.png", size: "50x50", id: "my_icon"
+        - if @user.icon?
+          = image_tag "#{user.icon}", size: "50x50", id: "my_icon"
+        - else
+          = image_tag "/myicon.png", size: "50x50", id: "my_icon"
       .myicon__name
-        Nikoniko
+        = @user.nickname
       .myicon__number
         評価  0   出品数  0
