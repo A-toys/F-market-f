@@ -3,7 +3,7 @@ crumb :root do
 end
 
 crumb :user do
-  link "マイページ", user_path(current_user)
+  link "マイページ", user_path(:id)
 end
 
 crumb :cards do

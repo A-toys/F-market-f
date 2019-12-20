@@ -75,15 +75,16 @@
         = converting_to_jpy(@item.price)
       %span.item-details__price-box--tax (税込)
       %span.item-details__price-box--shipping-fee 送料込み
+    -if user_signed_in? && current_user.id == @item.seller_user_id
+      = link_to item_path(@item), method: :delete, class: "item-details__buy-btn" do
+        この商品を削除する
+      
+      = link_to edit_item_path(@item), class: "item-details__buy-btn" do
+        この商品を編集する
 
-    = link_to item_purchase_index_path(@item), class: "item-details__buy-btn" do
-      購入画面に進む
-
-    = link_to item_path(@item), method: :delete do
-      この商品を削除する
-    
-    = link_to edit_item_path(@item) do
-      この商品を編集する
+    -else
+      = link_to item_purchase_index_path(@item), class: "item-details__buy-btn" do
+        購入画面に進む
 
     .item-details__text
       .item-details__text__inner
