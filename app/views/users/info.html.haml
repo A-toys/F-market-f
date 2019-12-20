@@ -16,13 +16,18 @@
         .maincontent__center__box__info
           .maincontent__center__box__info__formGroup
             %label お名前
-            %P 上野和輝
+            %br/
+            = current_user.last_name
+            = current_user.first_name
           .maincontent__center__box__info__formGroup
             %label お名前カナ
-            %P ウエノカズキ
+            %br/
+            = current_user.last_name_kana
+            = current_user.first_name_kana
           .maincontent__center__box__info__formGroup
             %label 生年月日
-            %P 1997/03/28
+            %br/
+            = current_user.birthday
           .maincontent__center__box__info__formGroup
             %label{for: "zip_code"}
               郵便番号
