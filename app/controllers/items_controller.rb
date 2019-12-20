@@ -38,13 +38,14 @@ class ItemsController < ApplicationController
 
   def edit
     @item.images.build
+    render layout: 'devise'
   end
 
   def update
     if @item.update(item_params)
       redirect_to root_path
     else
-      render item_path
+      redirect_to edit_item_path(@item)
     end
   end
      
