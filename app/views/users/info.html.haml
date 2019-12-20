@@ -17,16 +17,17 @@
           .maincontent__center__box__info__formGroup
             %label お名前
             %br/
-            = @user.nickname
+            = current_user.last_name
+            = current_user.first_name
           .maincontent__center__box__info__formGroup
             %label お名前カナ
             %br/
-            = @user.last_name_kana
-            = @user.first_name_kana
+            = current_user.last_name_kana
+            = current_user.first_name_kana
           .maincontent__center__box__info__formGroup
             %label 生年月日
             %br/
-            = @user.birthday
+            = current_user.birthday
           .maincontent__center__box__info__formGroup
             %label{for: "zip_code"}
               郵便番号

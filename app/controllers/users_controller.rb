@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def info
-    @user = User.where(id: current_user).first
+    
   end
 
  private 
