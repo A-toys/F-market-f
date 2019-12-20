@@ -38,7 +38,6 @@ $(function () {
             $(uploadDropBox).removeClass().addClass(`sell__main__box__upload__box__preview__guide-${itemLength + 1}`)
           }else if(itemLength >= 4) {
               $(uploadDropBox).css('display', 'none')
-              $(uploadDropBox2).css('display','block');
               $(uploadItems2).css('display','block');
               $(uploadItems).prepend(`<li class="sell__main__box__upload__items">
                                   <figure class="sell__main__box__upload__items__figure">
