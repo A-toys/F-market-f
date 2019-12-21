@@ -9,6 +9,11 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
 
   validates :name, :text, :condition, :fee_burden, :service, :prefecture_id, :handing_time, :price, presence: true
+  #画像がない場合のバリデーション
+  validate :require_any_image
+  def require_any_image
+    errors.add(:base, :no_image) if images.blank?
+  end
 
   enum condition: {'新品未使用': 1, '未使用に近い': 2, '目立った傷や汚れなし': 3, '傷や汚れあり': 4, '全体的に状態が悪い': 5}
   enum fee_burden: {'送料込み（出品者負担）': 1, '着払い（購入者負担）': 2}
