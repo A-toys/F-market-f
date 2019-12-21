@@ -17,7 +17,8 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      redirect_to new_item_path
+      @item.images.build
+      render :new
     end
   end
   
