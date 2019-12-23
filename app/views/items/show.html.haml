@@ -147,7 +147,7 @@
           = link_to item_path(item) do
             .another-items__content__box__image
               - item.images.each do |image|
-                = image_tag "#{image}"
+                = image_tag "#{image.image_url}"
 
             .another-items__content__box__text
               %h3.another-items__name
