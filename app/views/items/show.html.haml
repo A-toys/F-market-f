@@ -148,7 +148,7 @@
             .another-items__content__box__image
               %figure#other_img
                 - item.images.each do |image|
-                  = image_tag "#{image.image_url}"
+                  = image_tag "#{image.image_url}", size: "220x220"
             .another-items__content__box__text
               %h3.another-items__name
                 = item.name
