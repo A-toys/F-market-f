@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   has_many :comments ,dependent: :destroy
-  has_many :images ,dependent: :destroy,inverse_of: :item
+  has_many :images ,dependent: :destroy
   belongs_to :user,optional: true
   has_one :order
   belongs_to_active_hash :prefecture
