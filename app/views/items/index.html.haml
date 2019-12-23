@@ -26,7 +26,8 @@
             %li.item
               = link_to item_path(item) do
                 %figure#figure1
-                  =image_tag "#{item.images.first}", alt: "商品の写真", class:"picture"
+                  - item.images.each do |image|
+                    =image_tag "#{image.image_url}", alt: "商品の写真", class:"picture"
                   %span#price="¥#{item.price}"
                   .pic
                   %figcaption.exp
