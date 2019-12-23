@@ -1,5 +1,5 @@
 crumb :root do
-  link "メルカリ", root_path
+  link "エフマケ", root_path
 end
 
 crumb :user do
