@@ -309,7 +309,7 @@ td {
         padding-right: 0;
       }
       &__image {
-        // 仮置き
+        overflow: hidden;
         box-sizing: border-box;
         height: 220px;
         width: 220px;
