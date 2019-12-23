@@ -1,5 +1,7 @@
+#edit_img{
+  width: 105px;
+}
 .edit{
-  
   width: auto;
   height: auto;
   background-color: rgb(245, 245, 245);
@@ -31,7 +33,7 @@
       &__upload{
         width: 620px;
         padding: 40px;
-        height: 250px;
+        height: 100%;
         border-bottom: solid 1px rgb(245, 245, 245);
         &__header{
           font-size: 16px;
@@ -53,6 +55,13 @@
             font-size: 13px;
             font-weight: lighter;
           }
+        }
+        &__img{
+          max-width: 625px;
+        }
+        &__items{
+          display: flex;
+          flex-wrap: wrap;
         }
         &__box{
           position: relative;
