@@ -51,15 +51,16 @@ $(function () {
             $(uploadDropBox).removeClass().addClass(`sell__main__box__upload__box__preview__guide-second-${itemLength + 1}`)
             }
         };
+        
       })(file);
       reader.readAsDataURL(file);
     });
   });
-  $(document).on('click', '.sell-main__delete-image', function () {
-    $(this).parents('.sell-main__upload-item').remove();
-    let uploadItemLength = $(uploadItems).children('li').length;
-    $(uploadItems).removeClass().addClass(`sell-main__upload-items sell-main__upload-items--have-item-${uploadItemLength % 5}`);
-    $(uploadDropBox).removeClass().addClass(`sell-main__upload-drop-box sell-main__upload-drop-box--have-item-${uploadItemLength % 5}`);
+  $(document).on('click', '.sell__main__box__upload__items__btn__delite', function () {
+    $(this).parents('.sell__main__box__upload__items').remove();
+    $("#image_uploder").remove();
+    let itemLength = $(uploadItems).children('li').length;
+    $(uploadDropBox).removeClass().addClass(`sell__main__box__upload__box__preview__guide-${itemLength}`)
+    
   });
-
 })
