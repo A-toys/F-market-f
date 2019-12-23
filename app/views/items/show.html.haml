@@ -139,14 +139,15 @@
   .another-items
     %h2.another-items__head
       = link_to '#', class: 'another-items__head__title' do
-        aaaさんのその他の出品
+        = @user.nickname
+        %span さんのその他の出品
     .another-items__content
       - @items.each do |item|
         .another-items__content__box
           = link_to item_path(item) do
             .another-items__content__box__image
-              - item.images.each do |image|
-                = image_tag "#{image}"
+              //- item.images.each do |image|
+              = image_tag "#{item.images}"
 
             .another-items__content__box__text
               %h3.another-items__name
