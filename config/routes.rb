@@ -24,6 +24,10 @@ Rails.application.routes.draw do
         get 'done', to: 'purchase#done'
       end
     end
+    member do
+      get "change0", to: 'items#change0'
+      get "change1", to: 'items#change1'
+    end
   end
   resources :users do
     member do

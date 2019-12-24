@@ -48,9 +48,18 @@ class ItemsController < ApplicationController
       redirect_to edit_item_path(@item)
     end
   end
-     
-   
 
+  def change0
+    @item = Item.find(params[:id])
+    @item.update_attribute(:trading_status, "0")
+    redirect_to item_path
+  end
+
+  def change1
+    @item = Item.find(params[:id])
+    @item.update_attribute(:trading_status, "1")
+    redirect_to item_path
+  end
 
   private
   def item_params
