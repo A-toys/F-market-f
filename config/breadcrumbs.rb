@@ -26,6 +26,16 @@ crumb :logout_user do
   parent :user
 end
 
+crumb :info_user do
+  link "本人情報の登録", info_user_path
+  parent :user
+end
+
+crumb :pageedit_user do
+  link "プロフィール", pageedit_user_path
+  parent :user
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
