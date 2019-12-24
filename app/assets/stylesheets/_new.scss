@@ -1,6 +1,5 @@
 .sell{
   width: 1440px;
-  height: 2450px;
   background-color: rgb(245, 245, 245);
   &__header{
     height: 128px;
@@ -14,7 +13,6 @@
   &__main{
     display: block;
     width: 100%;
-    height: 2300px;
     &__box{
       width: 700px;
       margin: 0 auto;
