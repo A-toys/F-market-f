@@ -61,6 +61,7 @@ $(function () {
     $("#image_uploder").remove();
     let itemLength = $(uploadItems).children('li').length;
     $(uploadDropBox).removeClass().addClass(`sell__main__box__upload__box__preview__guide-${itemLength}`)
-    
   });
 })
+
+

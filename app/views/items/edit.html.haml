@@ -1,4 +1,3 @@
-
 =form_for @item do |f|
   .edit
     .edit__header
@@ -8,16 +7,29 @@
       .edit__main__box
         .edit__main__box__title
           商品情報の入力
-        .edit__main__box__upload
+        .sell__main__box__upload
           .edit__main__box__upload__header
             出品画像
             %span#span 必須
             %p{id:"p"} 最大10枚までアップロードできます
-          .edit__main__box__upload__box
+          .sell__main__box__upload__box
             = f.fields_for :images do |i|
-              = i.file_field :image_url
-            %pre{id:"pc"}
-              = preserve "ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+              .sell__main__box__upload__box__preview.clearfix
+                %li.sell__main__box__upload__items
+                  %figure.sell__main__box__upload__items__figure
+                    = i.label :image, class: "image" do
+                      #img_field{:onclick => "$('#file').click()"}
+                        = image_tag i.object.image_url.url, id: "edit_img"
+                      = i.file_field :image_url, class: "image",  id: "file", style: "display:none"
+          .sell__main__box__upload__box
+            .sell__main__box__upload__box__preview.clearfix
+              %label{id:"box__drop"}
+                .sell__main__box__upload__box__preview__guide-0{id:"guide_box"}
+                  %pre#pc
+                    %i.fas.fa-camera.fa-lg
+                    = preserve "<br>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+                    =f.fields_for :images,html: {id:'new_item'} do |i|
+                      =i.file_field :image_url,id:"image_editer",style:"display:none"
         .edit__main__box__form 
           .edit__main__box__form__group
             商品名
@@ -82,4 +94,3 @@
         = link_to "#", id: "atag" do
           = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "sell__main__footer__box__atag__img"
         %p#p ©Meruari,Inc
-              

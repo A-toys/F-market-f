@@ -24,6 +24,10 @@ class UsersController < ApplicationController
     
   end
 
+  def pageedit
+    
+  end
+
  private 
    def user_params
      params.require(:user).permit(:birthday)
