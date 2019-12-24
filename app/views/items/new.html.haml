@@ -15,14 +15,14 @@
             %p#p 最大10枚までアップロードできます
           .sell__main__box__upload__box
             =f.fields_for :images,html: {id:'new_item'} do |i|
-              .sell__main__box__upload__box__preview.clearfix
-                %ul#image_ul
-                .sell__main__box__upload__box__preview__guide-0{id:"guide_box"}
-                  %pre#pc
-                    %i.fas.fa-camera.fa-lg
-                    = preserve "<br>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
-                %label{id:"box__drop"}
-                  =i.file_field :image_url,id:"image_uploder",style:"display:none"
+              %label{id:"box__drop"}
+                .sell__main__box__upload__box__preview.clearfix
+                  %ul#image_ul
+                  .sell__main__box__upload__box__preview__guide-0{id:"guide_box"}
+                    %pre#pc
+                      %i.fas.fa-camera.fa-lg
+                      = preserve "<br>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+                      =i.file_field :image_url,id:"image_uploder",style:"display:none"
               .sell__main__box__upload__box__preview.clearfix
                 %ul#image_ul2
                 .sell__main__box__upload__box__preview__guide-second{id:"guide_box2"}
