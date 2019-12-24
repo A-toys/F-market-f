@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       get "profile"
       get "logout"
       get "info"
+      get "pageedit"
     end
   end
 

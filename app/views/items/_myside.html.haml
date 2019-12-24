@@ -70,7 +70,7 @@
     %h3.sidebar__mypage__head 設定
     %ul.sidebar__mypage__nav
       %li
-        = link_to "#", class: "sidebar__mypage__nav__item" do
+        = link_to pageedit_user_path(current_user), class: "sidebar__mypage__nav__item" do
           プロフィール
           %i.fas.fa-chevron-right
       %li
