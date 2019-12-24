@@ -86,9 +86,12 @@
           出品を再開する
       = link_to item_path(@item), method: :delete, class: "item-details__buy-btn" do
         この商品を削除する
-    -else
+    -elsif @item.trading_status === 1
       = link_to item_purchase_index_path(@item), class: "item-details__buy-btn" do
         購入画面に進む
+    -else
+      .item-details__buy-btn
+        この商品は、出品が停止されています
 
     .item-details__text
       .item-details__text__inner
