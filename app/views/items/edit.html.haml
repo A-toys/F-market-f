@@ -23,13 +23,13 @@
                       = i.file_field :image_url, class: "image",  id: "file", style: "display:none"
           .sell__main__box__upload__box
             .sell__main__box__upload__box__preview.clearfix
-              .sell__main__box__upload__box__preview__guide-0{id:"guide_box"}
-                %pre#pc
-                  %i.fas.fa-camera.fa-lg
-                  = preserve "<br>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
-                %label{id:"box__drop"}
-                  =f.fields_for :images,html: {id:'new_item'} do |i|
-                    =i.file_field :image_url,id:"image_editer",style:"display:none"
+              %label{id:"box__drop"}
+                .sell__main__box__upload__box__preview__guide-0{id:"guide_box"}
+                  %pre#pc
+                    %i.fas.fa-camera.fa-lg
+                    = preserve "<br>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード"
+                    =f.fields_for :images,html: {id:'new_item'} do |i|
+                      =i.file_field :image_url,id:"image_editer",style:"display:none"
         .edit__main__box__form 
           .edit__main__box__form__group
             商品名
