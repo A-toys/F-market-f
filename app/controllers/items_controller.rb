@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_user 
 
   def index
-    @items = Item.all
+    @items = Item.all.where.not(trading_status: 2)
   end
   
   def new
@@ -18,13 +18,13 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       @item.images.build
-      render :new
+      redirect_to new_item_path
     end
   end
   
   def show
     @user = User.find(@item[:seller_user_id])
-    @items = Item.where(seller_user_id: @user[:id]).where.not(id: params[:id])
+    @items = Item.where(seller_user_id: @user[:id]).where.not(id: params[:id]).where.not(trading_status: 2)
     @images = @item.images
     render layout: 'items_show'
   end
