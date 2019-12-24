@@ -13,6 +13,8 @@
             %li.item-details__content__left__main__image
               %figure#top_img
                 = image_tag "#{image.image_url}", size: "300x300"
+                -if @item.trading_status === 0
+                  = image_tag "/F-Market3.png", size: "150x150", class: "pause_img"
         %ul.item-details__content__left__list
           - @images.each do |image|
             %li.item-details__content__left__list__image

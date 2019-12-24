@@ -3,6 +3,7 @@ figure {
   #top_img{
     height: 300px;
     width: 300px;
+    position: relative;
   }
   #list_img{
     height: 60px;
@@ -13,7 +14,12 @@ figure {
     width: 220px;
   }
 }
-
+.pause_img{
+  float: left;
+  position: absolute;
+  top: 0%;
+  z-index: 1;
+}
 
 th {
   padding: 8px;
