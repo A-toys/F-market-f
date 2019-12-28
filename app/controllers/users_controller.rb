@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-
   end
+
   def create
     params[:user][:birthday] = birthday_join
     @user = User.new(user_params)
@@ -21,11 +21,9 @@ class UsersController < ApplicationController
   end
 
   def info
-    
   end
 
   def pageedit
-    
   end
 
  private 

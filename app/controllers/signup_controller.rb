@@ -185,7 +185,6 @@ class SignupController < ApplicationController
   def birthday_join
     date = params[:birthday]
     Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
-
   end
   
   # def set_card
