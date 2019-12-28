@@ -67,15 +67,14 @@ class ItemsController < ApplicationController
     images_attributes:[:image_url, :_destroy, :id]).merge(seller_user_id:current_user.id)
   end
 
-  def image_params
+  # def image_params
     #imageのストロングパラメータの設定.js側でimagesをrequireすれば画像のみを引き出せるように設定する。
-    params.require(:images).permit({:images => []})
-  end
+    # params.require(:images).permit({:images => []})
+  # end
 
   def set_item
     @item = Item.find(params[:id])
   end
-
 
   def set_user
     @user = User.where(id: current_user.id).first if user_signed_in?

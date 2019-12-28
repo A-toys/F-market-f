@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 
   resources :cards
 
-  
   resources :items do
     resources :purchase, only: [:index] do
       collection do
@@ -29,6 +28,7 @@ Rails.application.routes.draw do
       get "change1", to: 'items#change1'
     end
   end
+  
   resources :users do
     member do
       get "profile"

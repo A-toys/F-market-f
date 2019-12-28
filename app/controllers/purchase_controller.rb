@@ -34,6 +34,7 @@ class PurchaseController < ApplicationController
   def set_card
     @card = Card.where(user_id: current_user.id).first
   end
+  
   def set_item
     @item = Item.find(params[:item_id])
   end
