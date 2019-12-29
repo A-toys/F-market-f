@@ -1,7 +1,8 @@
 - breadcrumb :item
 .bread
   .bread__name
-    = breadcrumbs 
+    = breadcrumbs
+
 .item-details-body
   .item-details
     %h1.item-details__name
@@ -15,11 +16,13 @@
                 = image_tag "#{image.image_url}", size: "300x300"
                 -if @item.trading_status === 0
                   = image_tag "/F-Market3.png", size: "150x150", class: "pause_img"
+
         %ul.item-details__content__left__list
           - @images.each do |image|
             %li.item-details__content__left__list__image
               %figure#list_img
                 = image_tag "#{image.image_url}", size: "60x60"
+
       %table.item-details__content__right
         %tbody
           %tr
@@ -77,18 +80,20 @@
         = converting_to_jpy(@item.price)
       %span.item-details__price-box--tax (税込)
       %span.item-details__price-box--shipping-fee 送料込み
+
     -if user_signed_in? && current_user.id == @item.seller_user_id
       = link_to edit_item_path(@item), class: "item-details__buy-btn" do
         この商品を編集する
-      -if @item.trading_status === 1
+      -if @item.trading_status == 1
         = link_to change0_item_path(@item), action: :change0, method: :get, class: "item-details__buy-btn" do
           出品を一旦停止する
-      -elsif @item.trading_status === 0
+      -elsif @item.trading_status == 0
         = link_to change1_item_path(@item), class: "item-details__buy-btn" do
           出品を再開する
       = link_to item_path(@item), method: :delete, class: "item-details__buy-btn" do
         この商品を削除する
-    -elsif @item.trading_status === 1
+
+    -elsif @item.trading_status == 1
       = link_to item_purchase_index_path(@item), class: "item-details__buy-btn" do
         購入画面に進む
     -else
